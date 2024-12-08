@@ -21,20 +21,22 @@ const SOCIAL_ICONS: SocialIcon = {
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn");
 const linkedUrl = linkedInfo?.url;
 
-const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
+const locationInfo = [city, region].filter(Boolean).join(", ");
+
+const printInfo = [ locationInfo ,email, phone, linkedUrl].filter(Boolean).join(" • ");
 ---
 
-<Section>
+<Section className={Astro.props.className} >
 	<div class="flex flex-col-reverse gap-8">
-		<div class="info">
-			<h1>{name}</h1>
-			<h2>{label}</h2>
-			<div class="flex items-center gap-2 pt-2 text-sm text-skin-muted">
+		<div class="info print:text-center">
+			<h1 class="print:font-serif">{name}</h1>
+			<h2 class="print:hidden">{label}</h2>
+			<div class="flex items-center gap-2 pt-2 text-sm text-skin-muted print:hidden">
 				<WorldMap />
 				{city}, {region}
 			</div>
-			<footer class="print">
-				{printInfo}
+			<footer class="print print:text-skin-muted print:text-sm">
+			 {printInfo}
 			</footer>
 			<footer class="no-print">
 				{
@@ -99,7 +101,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
 
 <style>
 	.info {
-		@apply flex flex-col gap-1 pr-8 print:gap-0 print:pr-0;
+		@apply flex flex-col gap-1 print:gap-0 print:p-0 print:m-0 ;
 	}
 
 	h1 {
@@ -107,7 +109,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
 	}
 
 	h2 {
-		@apply text-balance text-base text-skin-muted print:text-lg;
+		@apply text-pretty text-base text-skin-muted print:text-sm;
 	}
 
 	img {

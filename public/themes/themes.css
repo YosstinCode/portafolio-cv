@@ -1,15 +1,17 @@
 @tailwind base;
 @layer base {
   :root {
-    --color-text-base: 0, 0, 0;
-    --color-text-muted: 120, 120, 120;
-    --color-text-inverted: 255, 255, 255;
-    --color-fill: 245, 245, 245;
-    --muted: 200, 200, 200;
-    --color: 249, 115, 22;
-    --color-button-accent: 249, 115, 22;
-    --color-button-accent-hover: 55, 55, 55;
-    --color-button-muted: 244, 239, 238;
+    --color-text-base: 25, 25, 25; /* Negro suave para texto principal, alto contraste */
+    --color-text-muted: 100, 100, 100; /* Gris medio para texto secundario */
+    --color-text-inverted: 255, 255, 255; /* Blanco puro para texto invertido */
+    --color-fill: 245, 245, 245; /* Blanco suave para fondo principal */
+    --muted: 220, 220, 220; /* Gris claro para detalles secundarios */
+    --color: 0, 170, 170; /* Cyan más apagado para evitar saturación en fondo claro */
+    --color-button-accent: 0, 170, 170; /* Cyan similar al texto, consistente con accesibilidad */
+    --color-button-accent-hover: 0, 140, 140; /* Cyan aún más suave para hover */
+    --color-button-muted: 230, 230, 230; /* Gris muy claro para botones secundarios */
+    
+
     [data-theme="blue"] {
       --color-text-base: 15, 23, 42;
       --color-text-muted: 100, 116, 139;
@@ -56,15 +58,15 @@
     }
   }
   .dark {
-    --color-text-base: 255, 255, 255;
-    --color-text-muted: 150, 150, 150;
-    --color-text-inverted: 255, 255, 255;
-    --color-fill: 18, 18, 18;
-    --muted: 36, 36, 36;
-    --color: 227, 77, 10;
-    --color-button-accent: 227, 77, 10;
-    --color-button-accent-hover: 231, 121, 43;
-    --color-button-muted: 26, 26, 26;
+    --color-text-base: 245, 245, 245; /* Blanco suave para texto principal, alto contraste */
+    --color-text-muted: 180, 180, 180; /* Gris claro para texto secundario */
+    --color-text-inverted: 255, 255, 255; /* Blanco puro para texto invertido */
+    --color-fill: 12, 12, 15; /* Fondo oscuro con un ligero matiz azul-negro */
+    --muted: 50, 50, 60; /* Gris oscuro con un matiz frío para detalles secundarios */
+    --color: 0, 255, 255; /* Cyan fosforescente (sin cambios) */
+    --color-button-accent: 0, 255, 255; /* Cyan fosforescente para botones principales */
+    --color-button-accent-hover: 0, 200, 200; /* Cyan más suave para hover */
+    --color-button-muted: 20, 25, 30; /* Gris oscuro frío con matiz azul para botones secundarios */  
     [data-theme="blue"] {
       --color-text-base: 248, 250, 252;
       --color-text-muted: 148, 163, 184;
@@ -109,4 +111,4 @@
       --color-button-accent-hover: 0, 185, 255;
       --color-button-muted: 25, 81, 86;
     }
-}
+}}

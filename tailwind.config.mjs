@@ -30,7 +30,7 @@ export default {
       colors: {
         skin: {
           hue: withOpacity("--color"),
-          muted: withOpacity("--muted"),
+          muted: withOpacity("--muted")
         },
       },
       ringColor: {

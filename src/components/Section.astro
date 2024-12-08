@@ -2,7 +2,16 @@
 const { className, title } = Astro.props;
 ---
 
-<section class:list={["flex flex-col gap-4 print:gap-0", className]}>
-	{title && <h3 class="relative flex w-full items-center gap-3 pb-4 text-3xl print:gap-1 print:pb-0 print:text-xl">{title}</h3>}
+<section class:list={["flex flex-col gap-4 print:mt-3 print:gap-0", className]}>
+	{title && <h3 class=" print:pl-2 relative flex w-full items-center gap-3 pb-4 text-3xl print:gap-1 print:pb-0 print:text-xl">{title}</h3>}
+	{title && <hr class="hidden mt-1 mb-4 print:block border-x-0 border-t-0 border-b-[0.2px] border-solid border-black"/>}
 	<slot />
 </section>
+
+<style>
+	@media print {
+		section {
+			page-break-inside: avoid;
+		}
+	}
+</style>

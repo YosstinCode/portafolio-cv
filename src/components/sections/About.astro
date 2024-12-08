@@ -5,8 +5,28 @@ import { basics } from "@cv";
 const { summary } = basics;
 ---
 
-<Section title="About">
-	<p>
+<Section className={Astro.props.className}  title="About">
+	<p class="print:italic print:text-sm">
 		{summary}
 	</p>
 </Section>
+
+<script>
+	// Detecta si el usuario está imprimiendo
+	if (typeof window !== "undefined") {
+		window.onbeforeprint = function () {
+			const titleElement = document.querySelector("h3");
+			if (titleElement) {
+				titleElement.classList.add('print:hidden');
+			}
+		};
+		window.onafterprint = function () {
+			const titleElement = document.querySelector("h3");
+			if (titleElement) {
+				titleElement.classList.remove('print:hidden');
+			}
+		};
+	}
+</script>
+
+

@@ -2,19 +2,17 @@
 import Theme from "@/icons/themeSwitch.astro";
 ---
 
-<div class="no-print inline-flex items-center">
-	<!-- <div class="flex items-center gap-1">
-		<Theme />
-		<select name="themeSwitch" id="themeSwitch" class="block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 dark:text-gray-100 dark:ring-gray-700 sm:text-sm sm:leading-6">
-			<option value="system">System</option>
-			<option value="dark">Dark</option>
-			<option value="light">Light</option>
-		</select>
-	</div> -->
-
-	<div class="group/theme flex items-center gap-2">
-		<label for="themeSwitch" class="flex items-center gap-1 text-sm font-medium leading-6 text-skin-base transition-transform ease-in-out group-hover/theme:rotate-45"> <Theme /></label>
-		<select id="themeSwitch" name="themeSwitch" class="focus:ring-skin-hue ring-skin-muted block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-skin-base ring-1 ring-inset focus:ring-2 sm:text-sm sm:leading-6">
+<div class="no-print inline-flex items-center gap-4">
+	<div class="group flex items-center gap-2">
+		<label for="themeSwitch" class="cursor-pointer flex items-center gap-1 text-sm font-medium leading-6 text-skin-base group-hover:rotate-45 transition-transform ease-in-out">
+			<Theme />
+		</label>
+		<select
+			id="themeSwitch"
+			name="themeSwitch"
+			class="w-auto cursor-pointer rounded-md bg-skin-fill text-skin-base border py-1.5 pl-3 pr-10 focus:ring-2 focus:ring-skin-hue focus:outline-none sm:text-sm"
+			aria-label="Theme Selector"
+		>
 			<option value="system">System</option>
 			<option value="dark">Dark</option>
 			<option value="light">Light</option>
@@ -22,12 +20,19 @@ import Theme from "@/icons/themeSwitch.astro";
 	</div>
 
 	<style>
+		select option:hover {
+			@apply bg-skin-hue;
+		}
+
 		:global(.dark) {
 			color-scheme: dark;
 		}
+
+
 	</style>
 
 	<script>
+		const label = document.querySelector("label") as HTMLLabelElement;
 		const select = document.getElementById("themeSwitch") as HTMLSelectElement;
 		const theme = localStorage.getItem("theme");
 		const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";

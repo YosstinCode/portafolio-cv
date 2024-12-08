@@ -43,21 +43,22 @@ const SKILLS_ICONS: Record<string, any> = {
       const endYear = endDate != null ? new Date(endDate).getFullYear() : "Present"
 
       return (
-        <li class="relative print:py-2">
+        <li class="relative print:hidden">
           <div class="group relative grid pb-1 print:pb-0 transition-all print:grid-cols-1 print:gap-1 sm:grid-cols-12 sm:gap-8 md:gap-6 lg:hover:!opacity-100 ">
             <header class="relative mt-1 text-xs font-semibold sm:col-span-2">
               <time datetime={startDate} data-title={startDate}>{startYear}</time> - <time datetime={endDate} data-title={endDate}>{endYear}</time>
             </header>
             <div class="relative flex flex-col pb-6 print:pb-0 before:-ml-6 sm:col-span-10 before:w-px print:before:hidden before:absolute before:bg-skin-muted before:h-full before:mt-2">
-            <div class="absolute w-2 h-2 bg-skin-muted rounded-full mt-2 -translate-x-[1.71rem] ring print:hidden ring-skin-fill"></div>
+              <div class="absolute w-2 h-2 bg-skin-muted rounded-full mt-2 -translate-x-[1.71rem] ring print:hidden ring-skin-fill"></div>
               <h3>
-                <div class="inline-flex items-center text-lg print:text-base leading-tight group/link focus-visible:text-amber-500" aria-label="{position} - {company}">
-                  <span>{position} <span>@</span> 
+                <div class="inline-flex print:flex items-center text-lg print:text-base leading-tight group/link focus-visible:text-amber-500" aria-label="{position} - {company}">
+                  <span>{position} <span class="print:hidden">@</span> 
                   {url ? (
-                    <a class="text-skin-hue" href={url} title={`Ver ${name}`} target="_blank">{name}</a>
+                    <a class="text-skin-hue order-1" href={url} title={`Ver ${name}`} target="_blank">{name}</a>
                   ) : (
-                    <span>{name}</span>
+                    <span class="">{name}</span>
                   )}
+
                   {url &&
                     <span class="inline-block text-skin-hue print:[&>svg]:hidden">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block w-4 h-4 ml-1 transition-transform translate-y-px shrink-0 group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none" aria-hidden="true">
@@ -75,7 +76,7 @@ const SKILLS_ICONS: Record<string, any> = {
               )}
               <div class="mt-4  print:gap-0 flex flex-col gap-4 print:text-xs text-sm" x-data="{ expanded: false }">
                 {summary && (
-                  <div class="flex flex-col gap-1">
+                  <div class="flex flex-col gap-1 print:hidden">
                     <h4>Summary:</h4>
                     <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
                       {Array.isArray(summary) ? (
@@ -93,8 +94,8 @@ const SKILLS_ICONS: Record<string, any> = {
                 <div class="md:after:from-skin-hue dark:md:after:to-skin-hue/0  flex relative flex-col max-sm:!h-auto print:!h-auto gap-4 print:gap-2 md:after:bg-gradient-to-t md:after:absolute md:after:bottom-0 md:after:w-full print:after:hidden md:after:h-12 md:after:content-[''] " :class="expanded ? 'after:hidden' : ''" x-show="expanded" x-collapse.min.50px>
                 {responsibilities && (
                   <div class="flex flex-col gap-1">
-                    <h4>Responsibilities:</h4>
-                    <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
+                    <h4 class="print:hidden">Responsibilities:</h4>
+                    <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2 print:pl-6">
                       {responsibilities.map(responsibility => (
                         <li>{responsibility}</li>
                       ))}
@@ -104,8 +105,8 @@ const SKILLS_ICONS: Record<string, any> = {
 
                 {achievements && (
                   <div class="flex flex-col gap-1">
-                    <h4>Achievements:</h4>
-                    <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
+                    <h4 class="print:hidden">Achievements:</h4>
+                    <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2 print:pl-6 ">
                       {achievements.map(achievement => (
                         <li>{achievement}</li>
                       ))}
@@ -138,6 +139,76 @@ const SKILLS_ICONS: Record<string, any> = {
         </li>
       )
     })}
+
+    {
+      work.map(({name, startDate, endDate, position, achievements, responsibilities, location, location_type})=>{
+        
+        // obtener mes y año de inicio y fin
+        // el mes legible
+
+        const startDateMonthAndYear = new Date(startDate).toLocaleString('default', { month: 'long', year: 'numeric' })
+        const endDateMonthAndYear = endDate != null ? new Date(endDate).toLocaleString('default', { month: 'long', year: 'numeric' }) : "Present"
+
+        return (
+          <li class="hidden print:flex flex-col my-3 gap-y-4">
+              <header class="flex justify-between">
+                <div class="flex flex-col">
+                  <span class="">
+                    {name}
+                  </span>
+                  <span class="text-skin-muted">
+                    {position}
+                  </span>
+                </div>
+                <div>
+                  {(location || location_type) && (
+                <div class="">
+                  {location} {location && location_type && '-'} {location_type}
+                </div>
+              )}
+                <time class="text-skin-muted italic" datetime={startDate} data-title={startDate}>{startDateMonthAndYear}</time> - <time class="text-skin-muted italic" datetime={endDate} data-title={endDate}>{endDateMonthAndYear}</time>
+                </div>
+              </header>
+              <main>
+                
+                {(responsibilities || achievements) && (
+                    <div
+                      class="flex relative flex-col max-sm:!h-auto print:!h-auto print:gap-1 print:after:hidden"
+                    >
+
+                    {achievements && (
+                        <div class="flex flex-col gap-1">
+                          <h4 class="print:hidden">Achievements:</h4>
+                          <ul class="text-skin-muted [&>li]:ml-2 flex list-disc flex-col gap-2 print:pl-4">
+                            {achievements.map((achievement) => (
+                              <li>{achievement}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {responsibilities && (
+                        <div class="flex flex-col gap-1">
+                          <h4 class="print:hidden">Responsibilities:</h4>
+                          <ul class="text-skin-muted [&>li]:ml-2 flex list-disc flex-col print:pl-4">
+                            {responsibilities.map((responsibility) => (
+                              <li>{responsibility}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      
+                    </div>
+                  )}
+
+              </main>
+          </li>
+        )
+
+
+      })
+    }
   </ul>  
 </Section>
 <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
