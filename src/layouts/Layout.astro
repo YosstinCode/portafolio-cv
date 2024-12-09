@@ -123,7 +123,26 @@ const { image, summary, url, theme } = basics;
 				article {
 					break-inside: avoid;
 				}
+
 			}
 		</style>
+		<script>
+			// Escucha cuando se haga print y ponle light mode
+			window.addEventListener("beforeprint", () => {
+				const theme = localStorage.getItem("theme");
+				theme === "dark" || theme === "system"  &&
+				document.querySelector('html')?.classList.toggle('dark', false);
+			});
+
+			// Escucha cuando se termine de imprimir y ponle el tema original
+			window.addEventListener("afterprint", () => {
+				localStorage.getItem("theme") === "dark" &&
+				document.querySelector('html')?.classList.toggle('dark', true);
+
+				localStorage.getItem("theme") === "system" &&
+				window.matchMedia("(prefers-color-scheme: dark)").matches &&
+				document.querySelector('html')?.classList.toggle('dark', true);
+			});
+		</script>
 	</body>
 </html>

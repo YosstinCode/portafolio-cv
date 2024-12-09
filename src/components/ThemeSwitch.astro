@@ -26,12 +26,9 @@ import Theme from "@/icons/themeSwitch.astro";
     </ul>
 </div>
 <style>
-
     :global(.dark) {
         color-scheme: dark;
     }
-
-
 </style>
 <script>
     const optionMenu = document.querySelector("#select-menu-theme");
@@ -56,7 +53,7 @@ import Theme from "@/icons/themeSwitch.astro";
         panelOption?.classList.toggle("opacity-100");
         chevron?.classList.toggle("rotate-180");
     });
-
+    
     // Cambia el tema al seleccionar una opción
     options?.forEach((option) => {
         option.addEventListener("click", (e) => {
@@ -67,6 +64,7 @@ import Theme from "@/icons/themeSwitch.astro";
             updateTheme(selectedOption.toLowerCase());
             panelOption?.classList.add("invisible", "opacity-0");
             panelOption?.classList.remove("opacity-100");
+            chevron?.classList.toggle("rotate-180");
         });
     });
 

@@ -56,14 +56,15 @@ const initialOption = languageList[currentLocale]
         panelOption?.classList.toggle("opacity-100");
         panelOption?.classList.toggle("opacity-0");
     });       
-
+    
     options?.forEach(option =>{
         option.addEventListener("click", ()=>{
             let selectedOption = option.querySelector(".option-text")?.innerHTML;
 
             if(sBtn_text) sBtn_text.innerHTML = selectedOption || "";
-
+            
             optionMenu?.classList.remove("active");
+            chevron?.classList.toggle("rotate-180");
             
 
             
