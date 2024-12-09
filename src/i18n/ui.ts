@@ -5,6 +5,7 @@ import education from '@/i18n/es/education.json';
 import projects from '@/i18n/es/projects.json';
 import skills from '@/i18n/es/skills.json';
 import work from '@/i18n/es/work.json';
+import months from '@/i18n/es/months.json';
 //*******************Inglés*************************/
 import basicsEn from '@/i18n/en/basics.json';
 import CertificatesEn from '@/i18n/en/certificates.json';
@@ -12,6 +13,7 @@ import educationEn from '@/i18n/en/education.json';
 import projectsEn from '@/i18n/en/projects.json';
 import skillsEn from '@/i18n/en/skills.json';
 import workEn from '@/i18n/en/work.json';
+import monthsEn from '@/i18n/en/months.json';
 //*************************************************/
 import languages from '@/i18n/languages.json';
 
@@ -62,6 +64,7 @@ export const ui = {
         hero: {
           'email.copy': 'Copiado!',
         },
+        months
     },
     en: {
         basics: basicsEn,
@@ -109,6 +112,7 @@ export const ui = {
         hero: {
           'email.copy': 'Email copied!',
         },
+        months: monthsEn
     }
 }
 

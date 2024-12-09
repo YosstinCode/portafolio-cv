@@ -1,17 +1,17 @@
 ---
-import type { EducationUI } from "@/i18n/types";
+import type { EducationUI, LanguageList, Months } from "@/i18n/types";
 import Section from "../Section.astro";
-import type { languageList } from "@/i18n/ui";
 import { useTranslations } from "@/i18n/utils";
 
 
 const currentLocale = Astro.currentLocale || "es";
 
-const translateUI = useTranslations(currentLocale as keyof typeof languageList);
+const translateUI = useTranslations(currentLocale as LanguageList);
 
 const {title, educations} = translateUI('education') as EducationUI;
 const showMore = translateUI('showMore') as { label: string};
 const present = translateUI('present') as { label: string};
+const months = translateUI('months') as Months;
 
 console.log(educations);
 ---
@@ -20,11 +20,19 @@ console.log(educations);
 	<ul class="space-y-4 py-3 print:space-y-0 print:flex print:flex-col print:gap-4 print:font-serif print:text-base">
 		{
 			educations.map(({ institution, startDate, endDate, area, url, details }) => {
-				const startDateMonthAndYear = new Date(startDate).toLocaleString('default', { month: 'long', year: 'numeric' })
-        		const endDateMonthAndYear = endDate != null ? new Date(endDate).toLocaleString('default', { month: 'long', year: 'numeric' }) : present.label
-				
-				const years = `${startDateMonthAndYear} - ${endDateMonthAndYear}`;
+				const startDateComplete = new Date(startDate)
+				const endDateComplete = endDate != null ? new Date(endDate) : new Date()
 
+				const startDateYear = startDateComplete.getFullYear()
+				const endDateYear = endDateComplete.getFullYear()
+
+				const startDateMonth = startDateComplete.getMonth().toString() as keyof Months
+				const endDateMonth = endDateComplete.getMonth().toString() as keyof Months
+
+				const startDateMonthAndYear = `${months[startDateMonth]} ${startDateYear}`
+				const endDateMonthAndYear = endDate != null ? `${months[endDateMonth]} ${endDateYear}` : present.label
+
+				const years = `${startDateMonthAndYear} - ${endDateMonthAndYear}`
 
 				return (
 					<div class="flex print:flex-col items-baseline print:gap-2 print:font-serif">

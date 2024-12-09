@@ -16,9 +16,8 @@ import Swift from "@/icons/swift.astro"
 import SwiftUI from "@/icons/swiftui.astro"
 import Kotlin from "@/icons/kotlin.astro"
 import Flutter from "@/icons/flutter.astro"
-import type { Experience, WorkUI } from "@/i18n/types"
+import type { Experience, LanguageList, WorkUI, Months } from "@/i18n/types"
 import { useTranslations } from "@/i18n/utils"
-import type { languageList } from "@/i18n/ui"
 
 interface ExperienceProps {
   className: string
@@ -44,7 +43,7 @@ const SKILLS_ICONS: Record<string, any> = {
 
 const currentLocale = Astro.currentLocale || "es";
 
-const translateUI = useTranslations(currentLocale as keyof typeof languageList);
+const translateUI = useTranslations(currentLocale as LanguageList);
 
 const { works, title} = translateUI('work') as WorkUI;
 console.log(works);
@@ -53,20 +52,30 @@ const experience = translateUI('experience') as Experience;
 const showMore = translateUI('showMore') as { label: string };
 const showLess = translateUI('showLess') as { label: string };
 const present = translateUI('present') as { label: string };
+const months = translateUI('months') as Months;
 
 const { className } = Astro.props as ExperienceProps;
 ---
 <Section className={className} title={title}>
   <ul class="flex flex-col">
     {works.map(({ name, startDate, endDate, position, summary, responsibilities, achievements, url, skills, location, location_type }) => {
-      const startYear = new Date(startDate).getFullYear()
-      const endYear = endDate != null ? new Date(endDate).getFullYear() : present.label
+      const startDateComplete = new Date(startDate)
+      const endDateComplete = endDate != null ? new Date(endDate) : new Date()
+
+      const startDateYear = startDateComplete.getFullYear()
+      const endDateYear = endDateComplete.getFullYear()
+
+      const startDateMonth = startDateComplete.getMonth().toString() as keyof Months
+      const endDateMonth = endDateComplete.getMonth().toString() as keyof Months
+
+      const startDateMonthAndYear = `${months[startDateMonth]} ${startDateYear}`
+      const endDateMonthAndYear = endDate != null ? `${months[endDateMonth]} ${endDateYear}` : present.label
 
       return (
         <li class="relative print:hidden">
           <div class="group relative grid pb-1 print:pb-0 transition-all print:grid-cols-1 print:gap-1 sm:grid-cols-12 sm:gap-8 md:gap-6 lg:hover:!opacity-100 ">
             <header class="relative mt-1 text-xs font-semibold sm:col-span-2">
-              <time datetime={startDate} data-title={startDate}>{startYear}</time> - <time datetime={endDate} data-title={endDate}>{endYear}</time>
+              <time datetime={startDate} data-title={startDate}>{startDateMonthAndYear}</time> - <time datetime={endDate} data-title={endDate}>{endDateMonthAndYear}</time>
             </header>
             <div class="relative flex flex-col pb-6 print:pb-0 before:-ml-6 sm:col-span-10 before:w-px print:before:hidden before:absolute before:bg-skin-muted before:h-full before:mt-2">
               <div class="absolute w-2 h-2 bg-skin-muted rounded-full mt-2 -translate-x-[1.71rem] ring print:hidden ring-skin-fill"></div>
@@ -166,13 +175,18 @@ const { className } = Astro.props as ExperienceProps;
 
     {
       works.map(({name, startDate, endDate, position, achievements, responsibilities, location, location_type})=>{
-        
-        // obtener mes y año de inicio y fin
-        // el mes legible
+        const startDateComplete = new Date(startDate)
+        const endDateComplete = endDate != null ? new Date(endDate) : new Date()
 
-        const startDateMonthAndYear = new Date(startDate).toLocaleString('default', { month: 'long', year: 'numeric' })
-        const endDateMonthAndYear = endDate != null ? new Date(endDate).toLocaleString('default', { month: 'long', year: 'numeric' }) : present.label
+        const startDateYear = startDateComplete.getFullYear()
+        const endDateYear = endDateComplete.getFullYear()
 
+        const startDateMonth = startDateComplete.getMonth().toString() as keyof Months
+        const endDateMonth = endDateComplete.getMonth().toString() as keyof Months
+
+        const startDateMonthAndYear = `${months[startDateMonth]} ${startDateYear}`
+        const endDateMonthAndYear = endDate != null ? `${months[endDateMonth]} ${endDateYear}` : present.label
+       
         return (
           <li class="hidden print:flex flex-col my-3 gap-y-4">
               <header class="flex justify-between">
