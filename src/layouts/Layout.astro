@@ -1,6 +1,8 @@
 ---
 import { basics } from "@cv";
 import Vengeance from "@/layouts/Vengeance.astro";
+import LanguageSwitch from "@/components/LanguageSwitch.astro";
+import ThemeSwitch from "@/components/ThemeSwitch.astro";
 
 interface Props {
 	title: string;
@@ -44,6 +46,7 @@ const { image, summary, url, theme } = basics;
 			<div class="bg-skin-hue/10 absolute bottom-auto left-[20%] right-auto top-0 h-[200px] w-[200px] -translate-x-[30%] translate-y-[20%] rounded-full blur-[80px] invert-0 dark:bg-white/5"></div>
 		</div>
 		<slot />
+
 		<style is:global>
 			body,
 			figure {

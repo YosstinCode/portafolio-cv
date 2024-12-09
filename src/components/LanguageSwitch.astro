@@ -1,0 +1,72 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
+import { languageList } from "@/i18n/ui";
+
+const currentLocale = Astro.currentLocale || "es";
+
+const initialOption = languageList[currentLocale] 
+---
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+<div id="select-menu" class="w-40">
+    <div id="select-btn" class="group flex h-10 p-5 text-lg rounded-lg items-center justify-between cursor-pointer border border-solid border-gray-400 ">
+        <div class="sBtn-text">
+            <span class=" option-text flex justify-center items-center gap-2">
+                <span class={`fi fi-${initialOption.country} fis rounded-full `}></span> 
+                <span>
+                    {initialOption.text}
+                </span>
+            </span>
+        </div>
+        <i class="bx bx-chevron-up text-sm transition rotate-180"></i>
+    </div>
+    <ul class="options max-w-40  relative p-1 mt-3 rounded-lg border border-solid border-gray-400 opacity-0 transition">
+        {
+            Object.entries(languageList).map(([key, language]) => {
+                return (
+                    <a href={getRelativeLocaleUrl(key,  "/")}
+                    class="option group flex items-center h-14 cursor-pointer py-0 px-4 rounded-lg hover:bg-skin-hue transition hover:transition-all" id={key}>
+                        <span class="option-text flex justify-center items-center gap-2">
+                            <span class={`fi fi-${language.country} fis rounded-full group-hover:scale-125`}></span> 
+                            <span class="group-hover:text-skin-inverted group-hover:dark:text-gray-700 text-skin-base">
+                                {language.text}
+                            </span>
+                        </span>
+                    </a>
+                )
+
+            })
+        }
+    </ul>
+</div>
+
+<script>
+    const optionMenu = document.querySelector("#select-menu")
+    const selectBtn = optionMenu?.querySelector("#select-btn")
+    const panelOption = optionMenu?.querySelector(".options")
+    const options = optionMenu?.querySelectorAll(".option")
+    const sBtn_text = optionMenu?.querySelector(".sBtn-text");
+    const chevron = selectBtn?.querySelector(".bx-chevron-up");
+
+    selectBtn?.addEventListener("click", () => {
+        optionMenu?.classList.toggle("active")
+        chevron?.classList.toggle("rotate-180");
+        panelOption?.classList.toggle("opacity-100");
+        panelOption?.classList.toggle("opacity-0");
+    });       
+
+    options?.forEach(option =>{
+        option.addEventListener("click", ()=>{
+            let selectedOption = option.querySelector(".option-text")?.innerHTML;
+
+            if(sBtn_text) sBtn_text.innerHTML = selectedOption || "";
+
+            optionMenu?.classList.remove("active");
+            
+
+            
+        });
+    });
+</script>

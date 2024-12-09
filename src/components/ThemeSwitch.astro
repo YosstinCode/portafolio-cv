@@ -1,60 +1,87 @@
 ---
 import Theme from "@/icons/themeSwitch.astro";
 ---
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-<div class="no-print inline-flex items-center gap-4">
-	<div class="group flex items-center gap-2">
-		<label for="themeSwitch" class="cursor-pointer flex items-center gap-1 text-sm font-medium leading-6 text-skin-base group-hover:rotate-45 transition-transform ease-in-out">
-			<Theme />
-		</label>
-		<select
-			id="themeSwitch"
-			name="themeSwitch"
-			class="w-auto cursor-pointer rounded-md bg-skin-fill text-skin-base border py-1.5 pl-3 pr-10 focus:ring-2 focus:ring-skin-hue focus:outline-none sm:text-sm"
-			aria-label="Theme Selector"
-		>
-			<option value="system">System</option>
-			<option value="dark">Dark</option>
-			<option value="light">Light</option>
-		</select>
-	</div>
-
-	<style>
-		select option:hover {
-			@apply bg-skin-hue;
-		}
-
-		:global(.dark) {
-			color-scheme: dark;
-		}
-
-
-	</style>
-
-	<script>
-		const label = document.querySelector("label") as HTMLLabelElement;
-		const select = document.getElementById("themeSwitch") as HTMLSelectElement;
-		const theme = localStorage.getItem("theme");
-		const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-
-		if (theme !== null) {
-			select.value = theme;
-		} else {
-			select.value = systemTheme;
-		}
-
-		function updateTheme(value: string) {
-			const theme = value === "system" ? systemTheme : value;
-			document.documentElement.classList.remove("light", "dark");
-			document.documentElement.classList.add(theme);
-			localStorage.setItem("theme", value);
-		}
-
-		updateTheme(select.value);
-
-		select.addEventListener("change", (event: Event) => {
-			const select = event.target as HTMLSelectElement;
-			updateTheme(select.value);
-		});
-	</script>
+<div id="select-menu-theme" class="w-40">
+    <div id="select-btn-theme" class="group flex h-10 p-5 text-lg rounded-lg items-center justify-between cursor-pointer border border-solid border-gray-400 ">
+        <div class="sBtn-text-theme flex gap-2 items-center">
+            <Theme />
+            <span id="initialOption-theme">System</span>
+        </div>
+        <i class="bx bx-chevron-up text-sm transition rotate-180"></i>
+    </div>
+    <ul class="options-theme max-w-40 relative p-1 mt-3 rounded-lg border border-solid border-gray-400 opacity-0 invisible transition-all">
+        {
+            ['Dark', 'Light', 'System'].map((mode) => {
+                return (
+                    <li class="option-theme group flex items-center h-14 cursor-pointer py-0 px-4 rounded-lg hover:bg-skin-hue transition hover:transition-all" id={mode}>
+                        <span class="option-text-theme group-hover:text-skin-inverted group-hover:dark:text-gray-700 text-skin-base">
+                            {mode}
+                        </span>
+                    </li>
+                )
+            })
+        }
+    </ul>
 </div>
+<style>
+
+    :global(.dark) {
+        color-scheme: dark;
+    }
+
+
+</style>
+<script>
+    const optionMenu = document.querySelector("#select-menu-theme");
+    const selectBtn = optionMenu?.querySelector("#select-btn-theme");
+    const panelOption = optionMenu?.querySelector(".options-theme");
+    const options = optionMenu?.querySelectorAll(".option-theme");
+    const initialOption = document.getElementById("initialOption-theme");
+    const chevron = selectBtn?.querySelector(".bx-chevron-up");
+
+    // Configura el tema inicial
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const storedTheme = localStorage.getItem("theme") || "system";
+    updateTheme(storedTheme);
+    
+    if (initialOption) initialOption.textContent = capitalize(storedTheme);
+    
+
+    // Abre y cierra el menú
+    selectBtn?.addEventListener("click", () => {
+        panelOption?.classList.toggle("invisible");
+        panelOption?.classList.toggle("opacity-0");
+        panelOption?.classList.toggle("opacity-100");
+        chevron?.classList.toggle("rotate-180");
+    });
+
+    // Cambia el tema al seleccionar una opción
+    options?.forEach((option) => {
+        option.addEventListener("click", (e) => {
+            const selectedOption = (e?.currentTarget as HTMLElement)?.textContent?.trim() || '';
+            
+            if (initialOption) initialOption.textContent = selectedOption;
+            
+            updateTheme(selectedOption.toLowerCase());
+            panelOption?.classList.add("invisible", "opacity-0");
+            panelOption?.classList.remove("opacity-100");
+        });
+    });
+
+    // Función para actualizar el tema
+    function updateTheme(value: string) {
+        const theme = value === "system" ? systemTheme : value;
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(theme);
+        localStorage.setItem("theme", value);
+    }
+
+    // Función para capitalizar texto
+    function capitalize(str: string) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+
+</script>
