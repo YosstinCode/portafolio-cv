@@ -1,6 +1,5 @@
 ---
 import Section from "../Section.astro"
-import { work } from "@cv"
 
 import HTML from "@/icons/html.astro"
 import CSS from "@/icons/css.astro"
@@ -17,6 +16,13 @@ import Swift from "@/icons/swift.astro"
 import SwiftUI from "@/icons/swiftui.astro"
 import Kotlin from "@/icons/kotlin.astro"
 import Flutter from "@/icons/flutter.astro"
+import type { Experience, WorkUI } from "@/i18n/types"
+import { useTranslations } from "@/i18n/utils"
+import type { languageList } from "@/i18n/ui"
+
+interface ExperienceProps {
+  className: string
+}
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
@@ -35,12 +41,26 @@ const SKILLS_ICONS: Record<string, any> = {
   Kotlin,
   Flutter,
 }
+
+const currentLocale = Astro.currentLocale || "es";
+
+const translateUI = useTranslations(currentLocale as keyof typeof languageList);
+
+const { works, title} = translateUI('work') as WorkUI;
+console.log(works);
+
+const experience = translateUI('experience') as Experience;
+const showMore = translateUI('showMore') as { label: string };
+const showLess = translateUI('showLess') as { label: string };
+const present = translateUI('present') as { label: string };
+
+const { className } = Astro.props as ExperienceProps;
 ---
-<Section className={Astro.props.className} title="Experience">
+<Section className={className} title={title}>
   <ul class="flex flex-col">
-    {work.map(({ name, startDate, endDate, position, summary, responsibilities, achievements, url, skills, location, location_type }) => {
+    {works.map(({ name, startDate, endDate, position, summary, responsibilities, achievements, url, skills, location, location_type }) => {
       const startYear = new Date(startDate).getFullYear()
-      const endYear = endDate != null ? new Date(endDate).getFullYear() : "Present"
+      const endYear = endDate != null ? new Date(endDate).getFullYear() : present.label
 
       return (
         <li class="relative print:hidden">
@@ -77,7 +97,7 @@ const SKILLS_ICONS: Record<string, any> = {
               <div class="mt-4  print:gap-0 flex flex-col gap-4 print:text-xs text-sm" x-data="{ expanded: false }">
                 {summary && (
                   <div class="flex flex-col gap-1 print:hidden">
-                    <h4>Summary:</h4>
+                    <h4>{experience.summary}:</h4>
                     <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
                       {Array.isArray(summary) ? (
                         summary.map(item => (
@@ -94,7 +114,7 @@ const SKILLS_ICONS: Record<string, any> = {
                 <div class="md:after:from-skin-hue dark:md:after:to-skin-hue/0  flex relative flex-col max-sm:!h-auto print:!h-auto gap-4 print:gap-2 md:after:bg-gradient-to-t md:after:absolute md:after:bottom-0 md:after:w-full print:after:hidden md:after:h-12 md:after:content-[''] " :class="expanded ? 'after:hidden' : ''" x-show="expanded" x-collapse.min.50px>
                 {responsibilities && (
                   <div class="flex flex-col gap-1">
-                    <h4 class="print:hidden">Responsibilities:</h4>
+                    <h4 class="print:hidden">{experience.responsabilities}:</h4>
                     <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2 print:pl-6">
                       {responsibilities.map(responsibility => (
                         <li>{responsibility}</li>
@@ -105,7 +125,7 @@ const SKILLS_ICONS: Record<string, any> = {
 
                 {achievements && (
                   <div class="flex flex-col gap-1">
-                    <h4 class="print:hidden">Achievements:</h4>
+                    <h4 class="print:hidden">{experience.achievements}:</h4>
                     <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2 print:pl-6 ">
                       {achievements.map(achievement => (
                         <li>{achievement}</li>
@@ -115,10 +135,14 @@ const SKILLS_ICONS: Record<string, any> = {
                 )}
                 </div>
                 
-                <button @click="expanded = ! expanded" class="print:hidden group/more w-fit cursor-pointer items-center justify-center gap-1.5 text-xs underline text-skin-muted transition-all hover:text-skin-base flex">
-                  <span x-text="expanded ? 'Show less' : 'Show more'">Show more</span>
-                  <svg class="w-4 h-4 group-hover/more:translate-y-0.5 duration-200 ease-out" :class="{ 'rotate-180': expanded }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
+                <button @click="expanded = !expanded" class="print:hidden group/more w-fit cursor-pointer items-center justify-center gap-1.5 text-xs underline text-skin-muted transition-all hover:text-skin-base flex">
+                  <span x-show="expanded">{showLess.label}</span>
+                  <span x-show="!expanded">{showMore.label}</span>
+                  <svg class="w-4 h-4 group-hover/more:translate-y-0.5 duration-200 ease-out" :class="{ 'rotate-180': expanded }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+              </button>
+
 
 
                 <ul class="flex print:hidden flex-wrap gap-2" aria-label="Technologies used">
@@ -141,13 +165,13 @@ const SKILLS_ICONS: Record<string, any> = {
     })}
 
     {
-      work.map(({name, startDate, endDate, position, achievements, responsibilities, location, location_type})=>{
+      works.map(({name, startDate, endDate, position, achievements, responsibilities, location, location_type})=>{
         
         // obtener mes y año de inicio y fin
         // el mes legible
 
         const startDateMonthAndYear = new Date(startDate).toLocaleString('default', { month: 'long', year: 'numeric' })
-        const endDateMonthAndYear = endDate != null ? new Date(endDate).toLocaleString('default', { month: 'long', year: 'numeric' }) : "Present"
+        const endDateMonthAndYear = endDate != null ? new Date(endDate).toLocaleString('default', { month: 'long', year: 'numeric' }) : present.label
 
         return (
           <li class="hidden print:flex flex-col my-3 gap-y-4">
@@ -178,7 +202,7 @@ const SKILLS_ICONS: Record<string, any> = {
 
                     {achievements && (
                         <div class="flex flex-col gap-1">
-                          <h4 class="print:hidden">Achievements:</h4>
+                          <h4 class="print:hidden">{experience.achievements}:</h4>
                           <ul class="text-skin-muted [&>li]:ml-2 flex list-disc flex-col gap-2 print:pl-4">
                             {achievements.map((achievement) => (
                               <li>{achievement}</li>
@@ -189,7 +213,7 @@ const SKILLS_ICONS: Record<string, any> = {
 
                       {responsibilities && (
                         <div class="flex flex-col gap-1">
-                          <h4 class="print:hidden">Responsibilities:</h4>
+                          <h4 class="print:hidden">{experience.responsabilities}:</h4>
                           <ul class="text-skin-muted [&>li]:ml-2 flex list-disc flex-col print:pl-4">
                             {responsibilities.map((responsibility) => (
                               <li>{responsibility}</li>

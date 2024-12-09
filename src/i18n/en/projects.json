@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Personal Portfolio",
+        "isActive": false,
+        "description": "A personal portfolio website to showcase my projects and skills.",
+        "highlights": [
+            "Built with React and Tailwind CSS",
+            "Includes a blog and contact form"
+        ],
+        "url": "https://johndoe.dev",
+        "github": "https://github.com"
+    },
+    {
+        "name": "Weather App",
+        "isActive": true,
+        "description": "A web application that provides weather information for any location.",
+        "highlights": [
+            "Built with JavaScript and OpenWeatherMap API",
+            "Responsive design"
+        ],
+        "url": "https://weatherapp.com"
+    },
+    {
+        "name": "Task Manager",
+        "isActive": true,
+        "description": "A simple task management app to keep track of daily tasks.",
+        "highlights": [
+            "Built with Node.js and MongoDB",
+            "User authentication and CRUD operations"
+        ],
+        "url": "https://taskmanager.com",
+        "github": "https://github.com"
+    },
+    {
+        "name": "E-commerce Site",
+        "isActive": false,
+        "description": "An online store built with Next.js and Stripe for payment processing.",
+        "highlights": [
+            "Product management and shopping cart functionality",
+            "Secure payment integration"
+        ],
+        "url": "https://ecommerce.com"
+    }
+]

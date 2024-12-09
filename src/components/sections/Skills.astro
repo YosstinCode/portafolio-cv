@@ -11,13 +11,15 @@ import Git from "@/icons/git.astro";
 import GitHub from "@/icons/GitHub.astro";
 import Tailwind from "@/icons/tailwind.astro";
 import Next from "@/icons/next.astro";
-import { skills } from "@cv";
 import Swift from "@/icons/swift.astro";
 import SwiftUI from "@/icons/swiftui.astro";
 import Kotlin from "@/icons/kotlin.astro";
 import Flutter from "@/icons/flutter.astro";
 import Figma from "@/icons/Figma.astro";
 import Gitlab from "@/icons/Gitlab.astro";
+import type { languageList } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
+import type { LanguageList, SkillsUI } from "@/i18n/types";
 
 const SKILLS_ICONS: Record<string, any> = {
 	HTML,
@@ -38,9 +40,17 @@ const SKILLS_ICONS: Record<string, any> = {
 	Figma,
 	Gitlab,
 };
+
+const currentLocale = Astro.currentLocale || "es";
+
+const translateUI = useTranslations(currentLocale as LanguageList);
+
+const { title, skills } = translateUI('skills') as SkillsUI;
+
+
 ---
 
-<Section className={Astro.props.className} title="Skills">
+<Section className={Astro.props.className} title={title}>
 	<ul class="[&>li>svg]:text-skin-hue inline-flex flex-wrap gap-6 [&>li>svg]:size-5 [&>li]:text-sm">
 		{
 			skills.map(({ name }) => {

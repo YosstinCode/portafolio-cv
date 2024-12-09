@@ -1,0 +1,29 @@
+{
+    "name": "Yosstin Steven Castillo Ramirez",
+    "label": "Desarrollador, Full Stack, Ingeniero de Sistemas",
+    "image": "https://avatars.githubusercontent.com/u/76113738?v=4",
+    "email": "Yosstincode@gmail.com",
+    "phone": "+57 321 6336020",
+    "url": "https://yosstin.dev",
+    "summary": "Desarrollador apasionado en tecnologías frontend y backend con un enfoque en metodologías ágiles. Creo soluciones tecnológicas innovadoras y visualmente atractivas, combinando eficiencia y funcionalidad. Experto en JavaScript, React y Java con Spring Boot, con experiencia en desarrollo de plataformas SaaS, análisis de datos y liderazgo de equipos. Busco proyectos desafiantes que impulsen mi crecimiento profesional.",
+    "theme": "default",
+    "location": {
+        "address": "Girardot",
+        "postalCode": "252432",
+        "city": "Cundinamarca",
+        "countryCode": "CO",
+        "region": "Colombia"
+    },
+    "profiles": [
+        {
+            "network": "GitHub",
+            "username": "YosstinCode",
+            "url": "https://github.com/YosstinCode"
+        },
+        {
+            "network": "LinkedIn",
+            "username": "YosstinCode",
+            "url": "https://www.linkedin.com/in/yosstincode"
+        }
+    ]
+}

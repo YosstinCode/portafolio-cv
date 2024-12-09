@@ -1,0 +1,27 @@
+[
+    {
+        "institution": "Universidad Piloto de Colombia Seccional Alto del Magdalena",
+        "url": "https://www.unipiloto.edu.co",
+        "area": "Ingeniería de Sistemas",
+        "studyType": "Bachelor",
+        "startDate": "2022-02-01",
+        "endDate": null,
+        "score": "4.4 / 5.0",
+        "details": [
+            "Promedio académico alto desde el primer semestre."
+        ]
+    },
+    {
+        "institution": "Universidad Industrial de Santander",
+        "url": "https://www.uis.edu.co",
+        "area": "Programa de Desarrollo de Software",
+        "studyType": "Certificación",
+        "startDate": "2021-01-01",
+        "endDate": "2021-12-01",
+        "score": "4.9 / 5.0",
+        "details": [
+            "Especialización en Python, Java y desarrollo de aplicaciones web.",
+            "Promedio académico alto con una nota final sobresaliente."
+        ]
+    }
+]

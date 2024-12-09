@@ -1,0 +1,57 @@
+---
+import About from "@/components/sections/About.astro";
+import CertificatesC from "@/components/sections/Certificates.astro";
+import Education from "@/components/sections/Education.astro";
+import Experience from "@/components/sections/Experience.astro";
+import HeroC from "@/components/sections/Hero.astro";
+import KeyboardManager from "@/components/KeyboardManager.astro";
+import Layout from "@/layouts/Layout.astro";
+import ProjectsC from "@/components/sections/Projects.astro";
+import SkillsC from "@/components/sections/Skills.astro";
+
+import { useTranslations } from "@/i18n/utils";
+import { languageList } from "@/i18n/ui";
+import type { Basics, Hero, LanguageList } from "@/i18n/types";
+import ThemeSwitch from "@/components/ThemeSwitch.astro";
+import LanguageSwitch from "@/components/LanguageSwitch.astro";
+
+const currentLocale = Astro.currentLocale || "es";
+
+const translateUI = useTranslations(currentLocale as LanguageList);
+
+const basics = translateUI('basics') as Basics;
+const hero = translateUI('hero') as Hero;
+
+---
+<Layout title={`${basics.name} Portafolio - ${basics.label}`}>
+	<main class="relative grid max-w-7xl gap-12 p-8 max-sm:py-16 md:grid-cols-6 md:p-16 xl:gap-24 print:max-w-none print:grid-cols-1 print:gap-0 print:p-0">
+		<div class="space-y-6 md:col-span-2 print:col-span-1 print:grid print:grid-cols-2 print:gap-5 print:space-y-0">
+			<HeroC basics={basics} hero={hero} className="print:col-span-3" />
+			<About summary={basics.summary} className="print:col-span-3" />
+			<div class="flex gap-4">
+				<LanguageSwitch />
+				<ThemeSwitch />
+			</div>
+		</div>
+		<div class="space-y-12 md:col-span-4 print:col-span-1 print:grid print:grid-cols-3 print:gap-2 print:space-y-0">
+			<Experience className="print:col-span-3" />
+			<ProjectsC className="print:hidden" />
+			<SkillsC className="print:hidden" />
+			<Education className="print:col-span-3" />
+			<CertificatesC className="print:col-span-3" />
+		</div>
+	</main>
+
+	<KeyboardManager />
+</Layout>
+
+<style>
+	@page {
+		size: auto;
+		margin: 1cm 1.5cm;
+	}
+	main {
+		margin: auto;
+		width: 100%;
+	}
+</style>

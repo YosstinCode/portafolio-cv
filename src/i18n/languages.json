@@ -1,0 +1,12 @@
+{
+    "es": {
+        "text": "Español",
+        "country": "co",
+        "icon": "https://flagsapi.com/CO/flat/16.png"
+    },
+    "en": {
+        "text": "English",
+        "country": "us",
+        "icon": "https://flagsapi.com/US/flat/16.png"
+    }
+}

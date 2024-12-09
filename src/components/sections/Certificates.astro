@@ -1,9 +1,19 @@
 ---
 import Section from "../Section.astro"
-import { certificates } from "@cv"
+
+import { useTranslations } from "@/i18n/utils";
+import type { languageList } from "@/i18n/ui";
+import type { Certificates, CertificatesUI } from "@/i18n/types";
+
+
+const currentLocale = Astro.currentLocale || "es";
+
+const translateUI = useTranslations(currentLocale as keyof typeof languageList);
+
+const {certificates, title} = translateUI('certificates') as CertificatesUI;
 ---
 
-<Section className={Astro.props.className} title="Certificates">
+<Section className={Astro.props.className} title={title}>
 
     {
 		certificates.length > 0 && (

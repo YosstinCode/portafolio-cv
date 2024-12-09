@@ -1,0 +1,88 @@
+[
+    {
+        "name": "Ensolvers",
+        "position": "Software Engineer",
+        "url": "asdsa",
+        "location_type": "Remote",
+        "location": "San Francisco, EE.UU.",
+        "startDate": "2023-12-01",
+        "endDate": "2024-06-01",
+        "summary": "Desarrollo y mantenimiento del sistema Hirelens, una plataforma SaaS para la automatización de procesos de contratación.",
+        "achievements": null,
+        "responsibilities": [
+            "Implementé filtros de búsqueda en el frontend y endpoints en el backend para optimizar la gestión de candidatos, citas y tareas.",
+            "Creé pruebas unitarias para garantizar la calidad del sistema.",
+            "Asistí en la incorporación de nuevos miembros, proporcionando capacitación y configuración de entornos.",
+            "Depuré y corregí errores en el código, asegurando un funcionamiento óptimo.",
+            "Diseñé componentes gráficos para análisis de datos pertinentes."
+        ],
+        "skills": [
+            "Java 17",
+            "Spring Boot",
+            "Lombok",
+            "Junit 5",
+            "MySQL",
+            "Hibernate",
+            "Mockito",
+            "React",
+            "Material UI",
+            "React Hook Form",
+            "Nivo",
+            "Scrum"
+        ]
+    },
+    {
+        "name": "Universidad Piloto - Semillero",
+        "position": "Líder de Semillero",
+        "url": "",
+        "location_type": "On site",
+        "location": "Girardot, Colombia",
+        "startDate": "2023-10-01",
+        "endDate": "2024-05-01",
+        "summary": "Desarrollo de un sistema estadístico para analizar datos de tráfico para la Secretaría de Tránsito de Girardot.",
+        "achievements": null,
+        "responsibilities": [
+            "Gestioné tareas y revisiones de pull request del frontend.",
+            "Participé en reuniones para toma de requerimientos.",
+            "Desarrollé componentes gráficos y mapas de calor con OpenStreetMap.",
+            "Protegí rutas, documenté endpoints con Swagger y dirigí dailys bajo Scrum."
+        ],
+        "skills": [
+            "React",
+            "React Router DOM",
+            "Tailwind CSS",
+            "Material UI",
+            "Leaflet",
+            "Heat.Leaflet",
+            "FastAPI",
+            "SQLAlchemy",
+            "PostgreSQL",
+            "Scrum"
+        ]
+    },
+    {
+        "name": "Technologies Leaders Group - Semillero",
+        "position": "Desarrollador Backend",
+        "url": "",
+        "location_type": "On site",
+        "location": "Girardot, Colombia",
+        "startDate": "2023-10-01",
+        "endDate": "2024-04-01",
+        "summary": "Desarrollo de un software para la gestión de canchas sintéticas, incluyendo reservas, rankings y torneos.",
+        "achievements": null,
+        "responsibilities": [
+            "Lideré el equipo backend, guiando y capacitando a nuevos integrantes.",
+            "Diseñé una API RESTful para la gestión de usuarios y registros.",
+            "Documenté y probé endpoints con Postman.",
+            "Colaboré en el diseño de la base de datos junto al equipo."
+        ],
+        "skills": [
+            "Java 17",
+            "Spring Boot 3.1.5",
+            "JWT",
+            "Lombok",
+            "MariaDB",
+            "Spring Security"
+        ]
+    }
+]

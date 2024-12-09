@@ -1,11 +1,18 @@
 ---
+import type { languageList } from "@/i18n/ui";
 import Section from "../Section.astro";
+import { useTranslations } from "@/i18n/utils";
 
-import { basics } from "@cv";
-const { summary } = basics;
+const currentLocale = Astro.currentLocale || "es";
+
+const translateUI = useTranslations(currentLocale as keyof typeof languageList);
+
+const { title } = translateUI('about') as { title: string };
+
+const { summary } = Astro.props;
 ---
 
-<Section className={Astro.props.className}  title="About">
+<Section className={Astro.props.className}  title={title}>
 	<p class="print:italic print:text-sm">
 		{summary}
 	</p>
