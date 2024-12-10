@@ -2,13 +2,12 @@
 import Git from "@/icons/git.astro";
 import Arrow from "@/icons/Arrow.astro";
 import Section from "../Section.astro";
-import type { ProjectsUI } from "@/i18n/types";
+import type { LanguageList, ProjectsUI } from "@/i18n/types";
 import { useTranslations } from "@/i18n/utils";
-import type { languageList } from "@/i18n/ui";
 
 const currentLocale = Astro.currentLocale || "es";
 
-const translateUI = useTranslations(currentLocale as keyof typeof languageList);
+const translateUI = useTranslations(currentLocale as LanguageList);
 
 const { projects, title } = translateUI('projects') as ProjectsUI;
 
