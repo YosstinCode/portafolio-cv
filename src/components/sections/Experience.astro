@@ -18,6 +18,10 @@ import Kotlin from "@/icons/kotlin.astro"
 import Flutter from "@/icons/flutter.astro"
 import type { Experience, LanguageList, WorkUI, Months } from "@/i18n/types"
 import { useTranslations } from "@/i18n/utils"
+import ReactRouterDom from "@/icons/ReactRouterDom.astro"
+import Shadcn from "@/icons/Shadcn.astro"
+import Nest from "@/icons/Nest.astro"
+import PostgreSQL from "@/icons/PostgreSQL.astro"
 
 interface ExperienceProps {
   className: string
@@ -29,6 +33,7 @@ const SKILLS_ICONS: Record<string, any> = {
   JavaScript,
   TypeScript,
   React,
+  ReactRouterDom,
   Node,
   MySQL,
   Git,
@@ -39,6 +44,9 @@ const SKILLS_ICONS: Record<string, any> = {
   SwiftUI,
   Kotlin,
   Flutter,
+  Shadcn,
+  Nest,
+  PostgreSQL
 }
 
 const currentLocale = Astro.currentLocale || "es";
@@ -46,7 +54,6 @@ const currentLocale = Astro.currentLocale || "es";
 const translateUI = useTranslations(currentLocale as LanguageList);
 
 const { works, title} = translateUI('work') as WorkUI;
-console.log(works);
 
 const experience = translateUI('experience') as Experience;
 const showMore = translateUI('showMore') as { label: string };
@@ -107,7 +114,7 @@ const { className } = Astro.props as ExperienceProps;
                 {summary && (
                   <div class="flex flex-col gap-1 print:hidden">
                     <h4>{experience.summary}:</h4>
-                    <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
+                    <ul class="text-skin-muted flex flex-col gap-2">
                       {Array.isArray(summary) ? (
                         summary.map(item => (
                           {item}
@@ -156,7 +163,16 @@ const { className } = Astro.props as ExperienceProps;
 
                 <ul class="flex print:hidden flex-wrap gap-2" aria-label="Technologies used">
                   {skills && skills.map(skill => {
-                    const iconName = skill === "Next.js" ? "Next" : skill
+                    console.log(skill)
+                    const otherIconNames = {
+                      "React Router DOM":"ReactRouterDom", 
+                      "Next.js":"Next",
+                    }
+                    console.log(skill)
+                    // const iconName = otherIconNames.includes(skill) ? skill : skill
+                    // const iconName = skill === "Next.js" ? "Next" : skill
+                    const iconName = Object.keys(otherIconNames).includes(skill) ? otherIconNames[skill as keyof typeof otherIconNames] : skill
+                    // console.log(iconName)
                     const Icon = SKILLS_ICONS[iconName]
                     return (
                       <li class="bg-skin-button-accent/20 border-skin-hue/20 text-skin-hue print:p-0 print:bg-transparent print:text-zinc-800 flex gap-1 items-center border-solid print:border-none border rounded-md px-2 py-0.5 text-xs">
@@ -214,23 +230,24 @@ const { className } = Astro.props as ExperienceProps;
                       class="flex relative flex-col max-sm:!h-auto print:!h-auto print:gap-1 print:after:hidden"
                     >
 
-                    {achievements && (
-                        <div class="flex flex-col gap-1">
-                          <h4 class="print:hidden">{experience.achievements}:</h4>
-                          <ul class="text-skin-muted [&>li]:ml-2 flex list-disc flex-col gap-2 print:pl-4">
-                            {achievements.map((achievement) => (
-                              <li>{achievement}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
                       {responsibilities && (
                         <div class="flex flex-col gap-1">
                           <h4 class="print:hidden">{experience.responsabilities}:</h4>
                           <ul class="text-skin-muted [&>li]:ml-2 flex list-disc flex-col print:pl-4">
                             {responsibilities.map((responsibility) => (
                               <li>{responsibility}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      
+                    {achievements && (
+                        <div class="flex flex-col gap-1">
+                          <h4 class="">{experience.achievements}:</h4>
+                          <ul class="text-skin-muted [&>li]:ml-2 flex list-disc flex-col print:pl-4">
+                            {achievements.map((achievement) => (
+                              <li>{achievement}</li>
                             ))}
                           </ul>
                         </div>

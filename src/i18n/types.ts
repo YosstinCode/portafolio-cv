@@ -26,6 +26,7 @@ export interface Certificate {
     date: string
     issuer: string
     url: string
+    relevant: boolean
 }
 
 export type Certificates = Certificate[]

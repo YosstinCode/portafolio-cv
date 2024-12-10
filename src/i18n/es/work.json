@@ -1,20 +1,57 @@
 [
     {
+        "name": "Observatorio Secretaría de Tránsito de Girardot",
+        "position": "Lider tecnico, Desarrollador Frontend",
+        "url": "#",
+        "location_type": "Presencial",
+        "location": "Girardot, Colombia",
+        "startDate": "2023-10-01",
+        "endDate": "2024-12-01",
+        "summary": "Participé activamente en el desarrollo frontend del Observatorio de Siniestralidad vial y en las decisiones estratégicas para distintos productos dentro del semillero, que forman parte del convenio con la Secretaría de Tránsito de Girardot. Mi rol incluyó la coordinación del desarrollo frontend, asegurando que las soluciones implementadas fueran efectivas y alineadas con los objetivos del observatorio.",
+        "achievements": [
+            "Implementé un software que generó más de 10,000 dólares para la Universidad Piloto Seccional Alto del Magadalena para la Secretaría de Tránsito de Girardot, demostrando la importancia del producto.",
+            "Optimicé los procesos de toma de decisiones mediante la implementación de algoritmos avanzados, lo que permitió una mayor rapidez y precisión en la gestión de datos y la resolución de problemas.",
+            "Inové en la recolección de datos al integrar activamente a la ciudadanía en el proceso, aprovechando su participación para mejorar la calidad y cantidad de información recolectada, lo que resultó en un aumento del 30% en la cobertura de datos en comparación con métodos tradicionales."
+        ],
+        "responsibilities": [
+            "Lideré el equipo en la revisión y aprobación del código, garantizando la calidad y coherencia en el desarrollo frontend. Además, definí el flujo de trabajo con Git para asegurar un desarrollo eficiente y colaborativo.",
+            "Fui el punto de enlace entre los equipos de desarrollo y los usuarios finales, ayudando a definir los requisitos y prioridades del sistema. Apoyé al equipo en la interpretación técnica y a los usuarios en la clarificación de sus necesidades y deseos en el software.",
+            "Colaboré estrechamente en el diseño de la estructura de la base de datos para asegurar un acceso rápido y eficiente a los datos críticos de accidentalidad, basándome en el análisis del sistema y los requerimientos tomados.",
+            "Desarrollé componentes gráficos y mapas de calor con OpenStreetMap y Leaflet.",
+            "me encargué de establecer las mejores prácticas para la configuración y organización del sistema, incluyendo la estructura de carpetas, arquitecturas y configuraciones de entorno, asegurando una implementación escalable y flexible."
+        ],
+        "skills": [
+            "React",
+            "React Router DOM",
+            "Shadcn",
+            "Tailwind",
+            "Leaflet",
+            "Heat.Leaflet",
+            "Nest",
+            "Prisma",
+            "PostgreSQL",
+            "Atomic Design",
+            "Scrum"
+        ]
+    },
+    {
         "name": "Ensolvers",
-        "position": "Software Engineer",
-        "url": "asdsa",
+        "position": "Ingeniero de Software",
+        "url": "https://ensolvers.com/",
         "location_type": "Remote",
         "location": "San Francisco, EE.UU.",
         "startDate": "2023-12-01",
         "endDate": "2024-06-01",
-        "summary": "Desarrollo y mantenimiento del sistema Hirelens, una plataforma SaaS para la automatización de procesos de contratación.",
-        "achievements": null,
+        "summary": "Trabajé en el desarrollo y mantenimiento del sistema Hirelens, utilizando React JS en el frontend y Java Spring Boot en el backend. Realicé pruebas con JUnit y Mockito para asegurar la calidad del sistema y apoyé a mis compañeros en la implementación de soluciones y en la capacitación de nuevos miembros del equipo.",
+        "achievements": [
+            "Optimicé la gestión de datos, reducción el tiempo de respuesta en la administración de datos, mejorando un 20% la rapidez y precisión en la toma de decisiones críticas para el equipo de contratación.",
+            "La visualización de datos mediante gráficos interactivos no solo facilitó la toma de decisiones, sino que también mejoró la efectividad de la gestión de datos en un 25%, al permitir a los usuarios identificar patrones y tendencias con mayor rapidez y claridad."
+        ],
         "responsibilities": [
-            "Implementé filtros de búsqueda en el frontend y endpoints en el backend para optimizar la gestión de candidatos, citas y tareas.",
-            "Creé pruebas unitarias para garantizar la calidad del sistema.",
-            "Asistí en la incorporación de nuevos miembros, proporcionando capacitación y configuración de entornos.",
-            "Depuré y corregí errores en el código, asegurando un funcionamiento óptimo.",
-            "Diseñé componentes gráficos para análisis de datos pertinentes."
+            "Implementé filtros de búsqueda en el frontend y endpoints en el backend para optimizar la gestión de candidatos, citas y tareas, permitiendo un acceso rápido y eficiente a la información clave y reduciendo el tiempo de respuesta.",
+            "Desarrollé pruebas unitarias para asegurar la estabilidad y funcionalidad del sistema, garantizando un rendimiento óptimo y minimizando errores. Esto también contempló la integración continua y el despliegue automático (CI/CD) con integración en Slack, permitiendo una respuesta rápida ante alertas y fallos en las fases de desarrollo.",
+            "Facilitar la integración de nuevos miembros, ofrecí capacitaciones personalizadas y configuraciones de entorno adaptadas, lo que aceleró su adaptación y comprensión del sistema, optimizando su productividad desde el primer día.",
+            "Desarrollé y optimicé componentes gráficos avanzados para el análisis de datos, proporcionando una interpretación visual clara y precisa de la información, lo que facilitó la toma de decisiones estratégicas."
         ],
         "skills": [
             "Java 17",
@@ -29,60 +66,6 @@
             "React Hook Form",
             "Nivo",
             "Scrum"
-        ]
-    },
-    {
-        "name": "Universidad Piloto - Semillero",
-        "position": "Líder de Semillero",
-        "url": "",
-        "location_type": "On site",
-        "location": "Girardot, Colombia",
-        "startDate": "2023-10-01",
-        "endDate": "2024-05-01",
-        "summary": "Desarrollo de un sistema estadístico para analizar datos de tráfico para la Secretaría de Tránsito de Girardot.",
-        "achievements": null,
-        "responsibilities": [
-            "Gestioné tareas y revisiones de pull request del frontend.",
-            "Participé en reuniones para toma de requerimientos.",
-            "Desarrollé componentes gráficos y mapas de calor con OpenStreetMap.",
-            "Protegí rutas, documenté endpoints con Swagger y dirigí dailys bajo Scrum."
-        ],
-        "skills": [
-            "React",
-            "React Router DOM",
-            "Tailwind CSS",
-            "Material UI",
-            "Leaflet",
-            "Heat.Leaflet",
-            "FastAPI",
-            "SQLAlchemy",
-            "PostgreSQL",
-            "Scrum"
-        ]
-    },
-    {
-        "name": "Technologies Leaders Group - Semillero",
-        "position": "Desarrollador Backend",
-        "url": "",
-        "location_type": "On site",
-        "location": "Girardot, Colombia",
-        "startDate": "2023-10-01",
-        "endDate": "2024-04-01",
-        "summary": "Desarrollo de un software para la gestión de canchas sintéticas, incluyendo reservas, rankings y torneos.",
-        "achievements": null,
-        "responsibilities": [
-            "Lideré el equipo backend, guiando y capacitando a nuevos integrantes.",
-            "Diseñé una API RESTful para la gestión de usuarios y registros.",
-            "Documenté y probé endpoints con Postman.",
-            "Colaboré en el diseño de la base de datos junto al equipo."
-        ],
-        "skills": [
-            "Java 17",
-            "Spring Boot 3.1.5",
-            "JWT",
-            "Lombok",
-            "MariaDB",
-            "Spring Security"
         ]
     }
 ]

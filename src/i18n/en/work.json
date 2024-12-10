@@ -1,20 +1,57 @@
 [
     {
+        "name": "Observatory Girardot Traffic Secretariat",
+        "position": "Technical Leader, Frontend Developer",
+        "url": "#",
+        "location_type": "On site",
+        "location": "Girardot, Colombia",
+        "startDate": "2023-10-01",
+        "endDate": "2024-12-01",
+        "summary": "I actively participated in the frontend development of the Traffic Accident Observatory and in strategic decisions for various products within the research group, which are part of the agreement with the Girardot Traffic Secretariat. My role included leading frontend development, ensuring that implemented solutions were effective and aligned with the observatory's objectives.",
+        "achievements": [
+            "I implemented software that generated over $10,000 for the University Piloto Seccional Alto del Magdalena for the Girardot Traffic Secretariat, demonstrating the importance of the product.",
+            "I optimized decision-making processes by implementing advanced algorithms, which allowed for faster and more accurate data management and problem-solving.",
+            "I innovated in data collection by actively integrating citizens into the process, utilizing their participation to improve the quality and quantity of collected information, resulting in a 30% increase in data coverage compared to traditional methods."
+        ],
+        "responsibilities": [
+            "I led the team in code review and approval, ensuring quality and consistency in frontend development. I also defined the workflow with Git to ensure efficient and collaborative development.",
+            "I acted as a liaison between the development teams and the end users, helping to define system requirements and priorities. I supported the team in interpreting technical details and assisted users in clarifying their needs and desires in the software.",
+            "I collaborated closely in designing the database structure to ensure quick and efficient access to critical accident data, based on system analysis and requirements gathered.",
+            "I developed graphical components and heat maps with OpenStreetMap and Leaflet.",
+            "I was responsible for establishing best practices for system configuration and organization, including folder structure, architecture, and environment configurations, ensuring scalable and flexible implementation."
+        ],
+        "skills": [
+            "React",
+            "React Router DOM",
+            "Shadcn",
+            "Tailwind",
+            "Leaflet",
+            "Heat.Leaflet",
+            "NestJs",
+            "Prisma",
+            "PostgreSQL",
+            "Atomic Design",
+            "Scrum"
+        ]
+    },
+    {
         "name": "Ensolvers",
         "position": "Software Engineer",
-        "url": "asdsa",
+        "url": "https://ensolvers.com/",
         "location_type": "Remote",
-        "location": "San Francisco, EE.UU.",
+        "location": "San Francisco, USA",
         "startDate": "2023-12-01",
         "endDate": "2024-06-01",
-        "summary": "Desarrollo y mantenimiento del sistema Hirelens, una plataforma SaaS para la automatización de procesos de contratación.",
-        "achievements": null,
+        "summary": "I worked on the development and maintenance of the Hirelens system, using React JS for the frontend and Java Spring Boot for the backend. I conducted tests with JUnit and Mockito to ensure system quality and supported my colleagues in implementing solutions and training new team members.",
+        "achievements": [
+            "I optimized data management, reducing response time in data administration by 20%, improving the speed and accuracy of critical decision-making for the recruitment team.",
+            "The visualization of data through interactive graphics not only facilitated decision-making but also improved data management effectiveness by 25%, allowing users to identify patterns and trends more quickly and clearly."
+        ],
         "responsibilities": [
-            "Implementé filtros de búsqueda en el frontend y endpoints en el backend para optimizar la gestión de candidatos, citas y tareas.",
-            "Creé pruebas unitarias para garantizar la calidad del sistema.",
-            "Asistí en la incorporación de nuevos miembros, proporcionando capacitación y configuración de entornos.",
-            "Depuré y corregí errores en el código, asegurando un funcionamiento óptimo.",
-            "Diseñé componentes gráficos para análisis de datos pertinentes."
+            "I implemented search filters in the frontend and endpoints in the backend to optimize candidate management, appointments, and tasks, enabling quick and efficient access to key information and reducing response time.",
+            "I developed unit tests to ensure system stability and functionality, guaranteeing optimal performance and minimizing errors. This also included continuous integration and automatic deployment (CI/CD) with integration into Slack, allowing a quick response to alerts and failures in development phases.",
+            "To facilitate the integration of new members, I provided customized training and environment configurations, which accelerated their adaptation and understanding of the system, optimizing their productivity from day one.",
+            "I developed and optimized advanced graphical components for data analysis, providing a clear and precise visual interpretation of information, which facilitated strategic decision-making."
         ],
         "skills": [
             "Java 17",
@@ -29,60 +66,6 @@
             "React Hook Form",
             "Nivo",
             "Scrum"
-        ]
-    },
-    {
-        "name": "Universidad Piloto - Semillero",
-        "position": "Líder de Semillero",
-        "url": "",
-        "location_type": "On site",
-        "location": "Girardot, Colombia",
-        "startDate": "2023-10-01",
-        "endDate": "2024-05-01",
-        "summary": "Desarrollo de un sistema estadístico para analizar datos de tráfico para la Secretaría de Tránsito de Girardot.",
-        "achievements": null,
-        "responsibilities": [
-            "Gestioné tareas y revisiones de pull request del frontend.",
-            "Participé en reuniones para toma de requerimientos.",
-            "Desarrollé componentes gráficos y mapas de calor con OpenStreetMap.",
-            "Protegí rutas, documenté endpoints con Swagger y dirigí dailys bajo Scrum."
-        ],
-        "skills": [
-            "React",
-            "React Router DOM",
-            "Tailwind CSS",
-            "Material UI",
-            "Leaflet",
-            "Heat.Leaflet",
-            "FastAPI",
-            "SQLAlchemy",
-            "PostgreSQL",
-            "Scrum"
-        ]
-    },
-    {
-        "name": "Technologies Leaders Group - Semillero",
-        "position": "Desarrollador Backend",
-        "url": "",
-        "location_type": "On site",
-        "location": "Girardot, Colombia",
-        "startDate": "2023-10-01",
-        "endDate": "2024-04-01",
-        "summary": "Desarrollo de un software para la gestión de canchas sintéticas, incluyendo reservas, rankings y torneos.",
-        "achievements": null,
-        "responsibilities": [
-            "Lideré el equipo backend, guiando y capacitando a nuevos integrantes.",
-            "Diseñé una API RESTful para la gestión de usuarios y registros.",
-            "Documenté y probé endpoints con Postman.",
-            "Colaboré en el diseño de la base de datos junto al equipo."
-        ],
-        "skills": [
-            "Java 17",
-            "Spring Boot 3.1.5",
-            "JWT",
-            "Lombok",
-            "MariaDB",
-            "Spring Security"
         ]
     }
 ]

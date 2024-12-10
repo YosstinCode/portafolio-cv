@@ -1,27 +1,28 @@
 [
     {
-        "institution": "Universidad Piloto de Colombia Seccional Alto del Magdalena",
-        "url": "https://www.unipiloto.edu.co",
-        "area": "Ingeniería de Sistemas",
+        "institution": "Piloto University of Colombia - Alto del Magdalena Campus",
+        "url": "https://girardot.unipiloto.edu.co/",
+        "area": "Systems Engineering",
         "studyType": "Bachelor",
         "startDate": "2022-02-01",
         "endDate": null,
         "score": "4.4 / 5.0",
         "details": [
-            "Promedio académico alto desde el primer semestre."
+            "I have maintained an outstanding academic average since the beginning of my studies, reflecting my commitment and excellent performance in key engineering areas.",
+            "Recognized by professors and peers for my analytical skills and ability to solve complex technical problems."
         ]
     },
     {
-        "institution": "Universidad Industrial de Santander",
+        "institution": "Industrial University of Santander",
         "url": "https://www.uis.edu.co",
-        "area": "Programa de Desarrollo de Software",
-        "studyType": "Certificación",
+        "area": "Software Development",
+        "studyType": "Certification",
         "startDate": "2021-01-01",
         "endDate": "2021-12-01",
         "score": "4.9 / 5.0",
         "details": [
-            "Especialización en Python, Java y desarrollo de aplicaciones web.",
-            "Promedio académico alto con una nota final sobresaliente."
+            "Certification in software development with an emphasis on Python, Java, and modern web applications.",
+            "Achieved an outstanding average, ranking among the top students in the program."
         ]
     }
 ]

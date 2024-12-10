@@ -1,8 +1,6 @@
 ---
 import { basics } from "@cv";
 import Vengeance from "@/layouts/Vengeance.astro";
-import LanguageSwitch from "@/components/LanguageSwitch.astro";
-import ThemeSwitch from "@/components/ThemeSwitch.astro";
 
 interface Props {
 	title: string;
@@ -129,8 +127,14 @@ const { image, summary, url, theme } = basics;
 		<script>
 			// Escucha cuando se haga print y ponle light mode
 			window.addEventListener("beforeprint", () => {
+				alert("Printing...");
 				const theme = localStorage.getItem("theme");
-				theme === "dark" || theme === "system"  &&
+				alert(theme);
+				theme === "dark"  &&
+				document.querySelector('html')?.classList.toggle('dark', false);
+
+				theme === "system" &&
+				window.matchMedia("(prefers-color-scheme: dark)").matches &&
 				document.querySelector('html')?.classList.toggle('dark', false);
 			});
 

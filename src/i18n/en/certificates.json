@@ -1,164 +1,23 @@
 [
     {
-        "name": "EFSET English Certificate",
+        "name": "EFSET English Certification",
         "date": "2023-07",
         "issuer": "EFSET",
-        "url": "https://www.efset.org/cert/gvHfa2"
+        "url": "https://www.efset.org/cert/gvHfa2",
+        "relevant": true
     },
     {
         "name": "Back End Development and APIs",
         "date": "2023-04",
         "issuer": "freeCodeCamp",
-        "url": "https://freecodecamp.org/certification/Yosstin-Steven-Castillo-Ramirez/back-end-development-and-apis"
+        "url": "https://freecodecamp.org/certification/Yosstin-Steven-Castillo-Ramirez/back-end-development-and-apis",
+        "relevant": true
     },
     {
-        "name": "Curso de Inglés Básico A1: Presente Simple y Vocabulario Común",
-        "date": "2022-01",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/2393-presente-simple-vocabulario-comun/diploma/detalle/"
-    },
-    {
-        "name": "Certificado de Finalización de Programas de Desarrollo de Software con Python, Java y Aplicaciones Web",
+        "name": "Certification in Software Development and Web Applications",
         "date": "2021-12",
-        "issuer": "Universidad Industrial de Santander",
-        "url": "https://www.uis.edu.co/academicoGeneralJ8/validarCertificadoMisionTic?documento=1003556742&codigoEst=1211639&certificado=2"
-    },
-    {
-        "name": "Curso Básico de JavaScript",
-        "date": "2021-12",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/1814-basico-javascript/diploma/detalle/"
-    },
-    {
-        "name": "Curso Definitivo de HTML y CSS",
-        "date": "2021-12",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/2008-html-css/diploma/detalle/"
-    },
-    {
-        "name": "Curso Práctico de Frontend Developer",
-        "date": "2021-12",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/2477-frontend-developer-practico/diploma/detalle/"
-    },
-    {
-        "name": "Curso Práctico de HTML y CSS",
-        "date": "2021-12",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/1758-html-practico/diploma/detalle/"
-    },
-    {
-        "name": "Curso de Closures y Scope en JavaScript",
-        "date": "2021-12",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/1807-scope/diploma/detalle/"
-    },
-    {
-        "name": "Curso de Frontend Developer",
-        "date": "2021-12",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/2467-frontend-developer/diploma/detalle/"
-    },
-    {
-        "name": "Curso de Introducción a la Terminal y Línea de Comandos",
-        "date": "2021-12",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/2292-terminal/diploma/detalle/"
-    },
-    {
-        "name": "Fundamentos de Ingeniería de Software",
-        "date": "2021-12",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/1098-ingenieria/diploma/detalle/"
-    },
-    {
-        "name": "Taller de Inglés para Principiantes",
-        "date": "2021-12",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/2005-taller-principiantes/diploma/detalle/"
-    },
-    {
-        "name": "Curso Básico de Algoritmos y Pensamiento Lógico",
-        "date": "2021-11",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/2218-pensamiento-logico/diploma/detalle/"
-    },
-    {
-        "name": "Curso de Computación Básica",
-        "date": "2021-11",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/1741-computacion-basica/diploma/detalle/"
-    },
-    {
-        "name": "Curso de Inglés para Principiantes",
-        "date": "2021-11",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/1945-ingles-principiantes/diploma/detalle/"
-    },
-    {
-        "name": "Curso de Introducción a la Web: Historia y Funcionamiento de Internet",
-        "date": "2021-11",
-        "issuer": "Platzi",
-        "url": "https://platzi.com/p/yosstincode/curso/2053-introweb/diploma/detalle/"
-    },
-    {
-        "name": "CSS avanzado",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/63dc2d1aab973c72c444d89c954d5ba3cbf5f9b6733254f296f6f9730c6718c9?trk=backfilled_certificate"
-    },
-    {
-        "name": "Fundamentos de la programación: Diseño orientado a objetos",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/4d1abbe12e2a7a5377d8a916d99b...7d96dde8-7390-4bd7-a12e-9b60078a609e"
-    },
-    {
-        "name": "Fundamentos esenciales de la programación",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/4d1abbe12e2a7a5377d8a916d99b...87eb4631-3753-419f-b08f-526dcaa5eed0"
-    },
-    {
-        "name": "HTML esencial",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/4d1abbe12e2a7a5377d8a916d99b...434f0ff0-89b5-4dbe-a403-193b6a1ad236"
-    },
-    {
-        "name": "JavaScript avanzado: Buenas prácticas",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/4d1abbe12e2a7a5377d8a916d99b...170415af-5ad6-4be2-bebb-0d70d649faa2"
-    },
-    {
-        "name": "JavaScript avanzado: Expresiones regulares",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/4d1abbe12e2a7a5377d8a916d99b...c4e40944-5673-4c16-8bd8-8c394c57572d"
-    },
-    {
-        "name": "JavaScript esencial",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/4d1abbe12e2a7a5377d8a916d99b...928cb389-fde9-4afd-8f59-fa65c9437496"
-    },
-    {
-        "name": "Pensamiento computacional",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/4d1abbe12e2a7a5377d8a916d99b...05894226-6916-46fe-8c54-f2322679556f"
-    },
-    {
-        "name": "Prepara tu entrevista de trabajo para un puesto en programación",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/4d1abbe12e2a7a5377d8a916d99b...4b4f3488-9cf9-45f2-b7c6-5d9e55ee0c9f"
-    },
-    {
-        "name": "Python esencial",
-        "date": "2021-07",
-        "issuer": "LinkedIn",
-        "url": "https://www.linkedin.com/learning/certificates/4d1abbe12e2a7a5377d8a916d99b...e7d2a9a8-6764-4d27-bd76-5eecff9c5c66"
+        "issuer": "Industrial University of Santander",
+        "url": "https://www.uis.edu.co/academicoGeneralJ8/validarCertificadoMisionTic?documento=1003556742&codigoEst=1211639&certificado=2",
+        "relevant": true
     }
 ]
