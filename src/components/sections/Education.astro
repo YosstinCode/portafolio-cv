@@ -9,7 +9,6 @@ const currentLocale = Astro.currentLocale || "es";
 const translateUI = useTranslations(currentLocale as LanguageList);
 
 const {title, educations} = translateUI('education') as EducationUI;
-const showMore = translateUI('showMore') as { label: string};
 const present = translateUI('present') as { label: string};
 const months = translateUI('months') as Months;
 ---
@@ -17,7 +16,7 @@ const months = translateUI('months') as Months;
 <Section className={Astro.props.className} title={title}>
 	<ul class="space-y-4 py-3 print:space-y-0 print:flex print:flex-col print:gap-4 print:font-serif print:text-base">
 		{
-			educations.map(({ institution, startDate, endDate, area, url, details, score, studyType }) => {
+			educations.map(({ institution, startDate, endDate, area, url, details, studyType }) => {
 				const startDateComplete = new Date(startDate)
 				const endDateComplete = endDate != null ? new Date(endDate) : new Date()
 

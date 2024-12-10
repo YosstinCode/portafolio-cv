@@ -19,7 +19,7 @@ const {certificates, title} = translateUI('certificates') as CertificatesUI;
 		certificates.length > 0 && (
 			<>
 				<ul class="space-y-4 py-3 print:space-y-0">
-					{certificates.sort().map(({ name, date, issuer, url, relevant }, index) => {
+					{certificates.sort().map(({ name, date, issuer, url, relevant }) => {
 
 						const certificateYear = new Date(date).getFullYear();
 						const certificateMonth = new Date(date).getMonth().toString() as keyof typeof months;
