@@ -30,46 +30,46 @@ import Theme from "@/icons/themeSwitch.astro";
         color-scheme: dark;
     }
 </style>
-<script>
-    const optionMenu = document.querySelector("#select-menu-theme");
-    const selectBtn = optionMenu?.querySelector("#select-btn-theme");
-    const panelOption = optionMenu?.querySelector(".options-theme");
-    const options = optionMenu?.querySelectorAll(".option-theme");
-    const initialOption = document.getElementById("initialOption-theme");
-    const chevron = selectBtn?.querySelector(".bx-chevron-up");
+<script is:inline>
+    const optionMenuTheme = document.querySelector("#select-menu-theme");
+    const selectBtnTheme = optionMenuTheme?.querySelector("#select-btn-theme");
+    const panelOptionTheme = optionMenuTheme?.querySelector(".options-theme");
+    const optionsTheme = optionMenuTheme?.querySelectorAll(".option-theme");
+    const initialOptionTheme = document.getElementById("initialOption-theme");
+    const chevronTheme = selectBtnTheme?.querySelector(".bx-chevron-up");
 
     // Configura el tema inicial
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     const storedTheme = localStorage.getItem("theme") || "system";
     updateTheme(storedTheme);
     
-    if (initialOption) initialOption.textContent = capitalize(storedTheme);
+    if (initialOptionTheme) initialOptionTheme.textContent = capitalize(storedTheme);
     
 
     // Abre y cierra el menú
-    selectBtn?.addEventListener("click", () => {
-        panelOption?.classList.toggle("invisible");
-        panelOption?.classList.toggle("opacity-0");
-        panelOption?.classList.toggle("opacity-100");
-        chevron?.classList.toggle("rotate-180");
+    selectBtnTheme?.addEventListener("click", () => {
+        panelOptionTheme?.classList.toggle("invisible");
+        panelOptionTheme?.classList.toggle("opacity-0");
+        panelOptionTheme?.classList.toggle("opacity-100");
+        chevronTheme?.classList.toggle("rotate-180");
     });
     
     // Cambia el tema al seleccionar una opción
-    options?.forEach((option) => {
+    optionsTheme?.forEach((option) => {
         option.addEventListener("click", (e) => {
-            const selectedOption = (e?.currentTarget as HTMLElement)?.textContent?.trim() || '';
+            const selectedOption = (e?.currentTarget)?.textContent?.trim() || '';
             
-            if (initialOption) initialOption.textContent = selectedOption;
+            if (initialOptionTheme) initialOptionTheme.textContent = selectedOption;
             
             updateTheme(selectedOption.toLowerCase());
-            panelOption?.classList.add("invisible", "opacity-0");
-            panelOption?.classList.remove("opacity-100");
-            chevron?.classList.toggle("rotate-180");
+            panelOptionTheme?.classList.add("invisible", "opacity-0");
+            panelOptionTheme?.classList.remove("opacity-100");
+            chevronTheme?.classList.toggle("rotate-180");
         });
     });
 
     // Función para actualizar el tema
-    function updateTheme(value: string) {
+    function updateTheme(value) {
         const theme = value === "system" ? systemTheme : value;
         document.documentElement.classList.remove("light", "dark");
         document.documentElement.classList.add(theme);
@@ -77,9 +77,7 @@ import Theme from "@/icons/themeSwitch.astro";
     }
 
     // Función para capitalizar texto
-    function capitalize(str: string) {
+    function capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
-
-
 </script>
