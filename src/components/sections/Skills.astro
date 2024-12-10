@@ -46,8 +46,6 @@ const currentLocale = Astro.currentLocale || "es";
 const translateUI = useTranslations(currentLocale as LanguageList);
 
 const { title, skills } = translateUI('skills') as SkillsUI;
-
-
 ---
 
 <Section className={Astro.props.className} title={title}>
