@@ -19,26 +19,42 @@ import Figma from "@/icons/Figma.astro";
 import Gitlab from "@/icons/Gitlab.astro";
 import { useTranslations } from "@/i18n/utils";
 import type { LanguageList, SkillsUI } from "@/i18n/types";
+import ShadCn from "@/icons/Shadcn.astro";
+import Nest from "@/icons/Nest.astro";
+import PostgreSQL from "@/icons/PostgreSQL.astro";
+import Leaflet from "@/icons/Leaflet.astro";
+import Prisma from "@/icons/Prisma.astro";
+import AtomicDesign from "@/icons/AtomicDesign.astro";
+import Scrum from "@/icons/Scrum.astro";
+import ReactRouterDom from "@/icons/ReactRouterDom.astro";
 
 const SKILLS_ICONS: Record<string, any> = {
-	HTML,
-	CSS,
-	JavaScript,
-	TypeScript,
-	React,
-	Node,
-	MySQL,
-	Git,
-	GitHub,
-	Next,
-	Tailwind,
-	Swift,
-	SwiftUI,
-	Kotlin,
-	Flutter,
 	Figma,
 	Gitlab,
-};
+  HTML,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React,
+  ReactRouterDom,
+  Node,
+  MySQL,
+  Git,
+  GitHub,
+  Next,
+  Tailwind,
+  Swift,
+  SwiftUI,
+  Kotlin,
+  Flutter,
+  ShadCn,
+  Nest,
+  PostgreSQL,
+  Leaflet,
+  Prisma,
+  AtomicDesign,
+  Scrum
+}
 
 const currentLocale = Astro.currentLocale || "es";
 

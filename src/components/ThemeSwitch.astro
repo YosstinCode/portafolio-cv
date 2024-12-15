@@ -3,15 +3,15 @@ import Theme from "@/icons/themeSwitch.astro";
 ---
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-<div id="select-menu-theme" class="w-40">
-    <div id="select-btn-theme" class="group flex h-10 p-5 text-lg rounded-lg items-center justify-between cursor-pointer border border-solid border-gray-400 ">
+<div class="min-w-40 relative select-menu-theme">
+    <div class="select-btn-theme group flex h-10 p-5 text-lg rounded-lg items-center justify-between cursor-pointer border border-solid border-gray-400 ">
         <div class="sBtn-text-theme flex gap-2 items-center">
             <Theme />
             <span id="initialOption-theme">System</span>
         </div>
         <i class="bx bx-chevron-up text-sm transition rotate-180"></i>
     </div>
-    <ul class="options-theme max-w-40 relative p-1 mt-3 rounded-lg border border-solid border-gray-400 opacity-0 invisible transition-all">
+    <ul class="options-theme bg-skin-fill pointer-events-none z-20 min-w-40 absolute p-1 mt-3 rounded-lg border border-solid border-gray-400 opacity-0 invisible transition-[max-height] duration-500 ease-in-out max-h-0">
         {
             ['Dark', 'Light', 'System'].map((mode) => {
                 return (
@@ -30,9 +30,9 @@ import Theme from "@/icons/themeSwitch.astro";
         color-scheme: dark;
     }
 </style>
-<script is:inline>
-    const optionMenuTheme = document.querySelector("#select-menu-theme");
-    const selectBtnTheme = optionMenuTheme?.querySelector("#select-btn-theme");
+<script>
+    const optionMenuTheme = document.querySelector(".select-menu-theme");
+    const selectBtnTheme = optionMenuTheme?.querySelector(".select-btn-theme");
     const panelOptionTheme = optionMenuTheme?.querySelector(".options-theme");
     const optionsTheme = optionMenuTheme?.querySelectorAll(".option-theme");
     const initialOptionTheme = document.getElementById("initialOption-theme");
@@ -51,25 +51,30 @@ import Theme from "@/icons/themeSwitch.astro";
         panelOptionTheme?.classList.toggle("invisible");
         panelOptionTheme?.classList.toggle("opacity-0");
         panelOptionTheme?.classList.toggle("opacity-100");
+        panelOptionTheme?.classList.toggle("max-h-0");
+        panelOptionTheme?.classList.toggle("pointer-events-none");
         chevronTheme?.classList.toggle("rotate-180");
+        
     });
     
     // Cambia el tema al seleccionar una opción
     optionsTheme?.forEach((option) => {
         option.addEventListener("click", (e) => {
-            const selectedOption = (e?.currentTarget)?.textContent?.trim() || '';
+            const selectedOption = (e?.currentTarget as HTMLElement)?.textContent?.trim() || '';
             
             if (initialOptionTheme) initialOptionTheme.textContent = selectedOption;
             
             updateTheme(selectedOption.toLowerCase());
             panelOptionTheme?.classList.add("invisible", "opacity-0");
             panelOptionTheme?.classList.remove("opacity-100");
+            panelOptionTheme?.classList.add("max-h-0");
+            panelOptionTheme?.classList.add("pointer-events-none");
             chevronTheme?.classList.toggle("rotate-180");
         });
     });
 
     // Función para actualizar el tema
-    function updateTheme(value) {
+    function updateTheme(value: any) {
         const theme = value === "system" ? systemTheme : value;
         document.documentElement.classList.remove("light", "dark");
         document.documentElement.classList.add(theme);
@@ -77,7 +82,7 @@ import Theme from "@/icons/themeSwitch.astro";
     }
 
     // Función para capitalizar texto
-    function capitalize(str) {
+    function capitalize(str: any) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 </script>

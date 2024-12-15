@@ -10,8 +10,8 @@ const initialOption = languageList[currentLocale]
 ---
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-<div id="select-menu" class="w-40">
-    <div id="select-btn" class="group flex h-10 p-5 text-lg rounded-lg items-center justify-between cursor-pointer border border-solid border-gray-400 ">
+<div class="select-menu min-w-40 relative">
+    <div class="select-btn group flex h-10 p-5 text-lg rounded-lg items-center justify-between cursor-pointer border border-solid border-gray-400 ">
         <div class="sBtn-text">
             <span class=" option-text flex justify-center items-center gap-2">
                 <span class={`fi fi-${initialOption.country} fis rounded-full `}></span> 
@@ -20,9 +20,9 @@ const initialOption = languageList[currentLocale]
                 </span>
             </span>
         </div>
-        <i class="bx bx-chevron-up text-sm transition rotate-180"></i>
+        <i class="arrow bx bx-chevron-up text-sm transition rotate-180"></i>
     </div>
-    <ul class="options max-w-40  relative p-1 mt-3 rounded-lg border border-solid border-gray-400 opacity-0 transition">
+    <ul class="options bg-skin-fill pointer-events-none z-20 min-w-40 absolute p-1 mt-3 rounded-lg border border-solid border-gray-400 opacity-0 transition-[max-height] duration-500 ease-in-out max-h-0">
         {
             Object.entries(languageList).map(([key, language]) => {
                 return (
@@ -42,19 +42,21 @@ const initialOption = languageList[currentLocale]
     </ul>
 </div>
 
-<script is:inline>
-    const optionMenu = document.querySelector("#select-menu")
-    const selectBtn = optionMenu?.querySelector("#select-btn")
+<script>
+    const optionMenu = document.querySelector(".select-menu")
+    const selectBtn = optionMenu?.querySelector(".select-btn")
     const panelOption = optionMenu?.querySelector(".options")
     const options = optionMenu?.querySelectorAll(".option")
     const sBtn_text = optionMenu?.querySelector(".sBtn-text");
-    const chevron = selectBtn?.querySelector(".bx-chevron-up");
+    const chevron = selectBtn?.querySelector(".arrow");
 
     selectBtn?.addEventListener("click", () => {
         optionMenu?.classList.toggle("active")
         chevron?.classList.toggle("rotate-180");
         panelOption?.classList.toggle("opacity-100");
         panelOption?.classList.toggle("opacity-0");
+        panelOption?.classList.toggle("max-h-0");
+        panelOption?.classList.toggle("pointer-events-none");
     });       
     
     options?.forEach(option =>{

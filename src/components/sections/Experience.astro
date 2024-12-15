@@ -22,6 +22,15 @@ import ReactRouterDom from "@/icons/ReactRouterDom.astro"
 import Shadcn from "@/icons/Shadcn.astro"
 import Nest from "@/icons/Nest.astro"
 import PostgreSQL from "@/icons/PostgreSQL.astro"
+import Leaflet from "@/icons/Leaflet.astro"
+import Prisma from "@/icons/Prisma.astro"
+import AtomicDesign from "@/icons/AtomicDesign.astro"
+import Scrum from "@/icons/Scrum.astro"
+import Java from "@/icons/Java.astro"
+import Spring from "@/icons/Spring.astro"
+import JUnit5 from "@/icons/JUnit5.astro"
+import Hibernate from "@/icons/Hibernate.astro"
+import MUI from "@/icons/MUI.astro"
 
 interface ExperienceProps {
   className: string
@@ -46,7 +55,16 @@ const SKILLS_ICONS: Record<string, any> = {
   Flutter,
   Shadcn,
   Nest,
-  PostgreSQL
+  PostgreSQL,
+  Leaflet,
+  Prisma,
+  AtomicDesign,
+  Scrum,
+  Java,
+  Spring,
+  JUnit5,
+  Hibernate,
+  MUI
 }
 
 const currentLocale = Astro.currentLocale || "es";
@@ -127,7 +145,7 @@ const { className } = Astro.props as ExperienceProps;
                 )}
 
                 {(responsibilities || achievements) &&  (
-                <div class="md:after:from-skin-hue dark:md:after:to-skin-hue/0  flex relative flex-col max-sm:!h-auto print:!h-auto gap-4 print:gap-2 md:after:bg-gradient-to-t md:after:absolute md:after:bottom-0 md:after:w-full print:after:hidden md:after:h-12 md:after:content-[''] " :class="expanded ? 'after:hidden' : ''" x-show="expanded" x-collapse.min.50px>
+                <div class="md:after:from-skin-hue dark:md:after:to-skin-hue/0  flex relative flex-col print:!h-auto gap-4 print:gap-2 md:after:bg-gradient-to-t md:after:absolute md:after:bottom-0 md:after:w-full print:after:hidden md:after:h-12 md:after:content-[''] " :class="expanded ? 'after:hidden' : ''" x-show="expanded" x-collapse.min.50px>
                 {responsibilities && (
                   <div class="flex flex-col gap-1">
                     <h4 class="print:hidden">{experience.responsabilities}:</h4>
@@ -167,6 +185,11 @@ const { className } = Astro.props as ExperienceProps;
                     const otherIconNames = {
                       "React Router DOM":"ReactRouterDom", 
                       "Next.js":"Next",
+                      "Heat.Leaflet":"Leaflet",
+                      "Atomic Design":"AtomicDesign",
+                      "Spring Boot":"Spring",
+                      "Junit 5":"JUnit5",
+                      "Material UI":"MUI"
                     }
                     console.log(skill)
                     // const iconName = otherIconNames.includes(skill) ? skill : skill

@@ -22,15 +22,15 @@
         ],
         "skills": [
             "React",
-            "React Router DOM",
-            "Shadcn",
             "Tailwind",
+            "Atomic Design",
+            "Shadcn",
+            "React Router DOM",
             "Leaflet",
             "Heat.Leaflet",
             "Nest",
             "Prisma",
             "PostgreSQL",
-            "Atomic Design",
             "Scrum"
         ]
     },
@@ -54,17 +54,17 @@
             "Desarrollé y optimicé componentes gráficos avanzados para el análisis de datos, proporcionando una interpretación visual clara y precisa de la información, lo que facilitó la toma de decisiones estratégicas."
         ],
         "skills": [
-            "Java 17",
+            "React",
+            "React Hook Form",
+            "Material UI",
+            "Nivo",
+            "Java",
             "Spring Boot",
             "Lombok",
             "Junit 5",
-            "MySQL",
             "Hibernate",
             "Mockito",
-            "React",
-            "Material UI",
-            "React Hook Form",
-            "Nivo",
+            "MySQL",
             "Scrum"
         ]
     }

@@ -1,46 +1,72 @@
 [
     {
-        "name": "Figma",
-        "level": "Expert",
+        "name": "React",
+        "level": "Intermediate",
         "keywords": [
-            "Design",
+            "Web Development",
+            "Frontend",
+            "JavaScript Library",
             "UI"
         ]
     },
     {
-        "name": "Gitlab",
+        "name": "ReactRouterDom",
+        "level": "Intermediate",
+        "keywords": [
+            "Web Development",
+            "Frontend",
+            "JavaScript Library",
+            "UI"
+        ]
+    },
+    {
+        "name": "Node",
+        "level": "Intermediate",
+        "keywords": [
+            "Web Development",
+            "Backend",
+            "JavaScript Runtime",
+            "API"
+        ]
+    },
+    {
+        "name": "MySQL",
+        "level": "Intermediate",
+        "keywords": [
+            "Web Development",
+            "Database",
+            "SQL",
+            "Relational"
+        ]
+    },
+    {
+        "name": "Git",
         "level": "Intermediate",
         "keywords": [
             "Version Control",
             "Collaboration",
-            "Source Code"
+            "Development",
+            "GitHub"
         ]
     },
     {
-        "name": "HTML",
+        "name": "GitHub",
         "level": "Intermediate",
         "keywords": [
-            "Web Development",
-            "Frontend"
+            "Version Control",
+            "Collaboration",
+            "Development",
+            "Git"
         ]
     },
     {
-        "name": "CSS",
-        "level": "Intermediate",
-        "keywords": [
-            "Web Development",
-            "Frontend",
-            "Responsive Design"
-        ]
-    },
-    {
-        "name": "JavaScript",
+        "name": "Next",
         "level": "Intermediate",
         "keywords": [
             "Web Development",
             "Frontend",
-            "Backend",
-            "Fullstack"
+            "JavaScript Framework",
+            "React"
         ]
     },
     {
@@ -50,7 +76,67 @@
             "Web Development",
             "Frontend",
             "CSS Framework",
-            "Responsive Design"
+            "Utility"
+        ]
+    },
+    {
+        "name": "Swift",
+        "level": "Intermediate",
+        "keywords": [
+            "Mobile Development",
+            "iOS",
+            "macOS",
+            "watchOS"
+        ]
+    },
+    {
+        "name": "SwiftUI",
+        "level": "Intermediate",
+        "keywords": [
+            "Mobile Development",
+            "iOS",
+            "macOS",
+            "watchOS"
+        ]
+    },
+    {
+        "name": "Kotlin",
+        "level": "Intermediate",
+        "keywords": [
+            "Mobile Development",
+            "Android",
+            "Java",
+            "JetBrains"
+        ]
+    },
+    {
+        "name": "Flutter",
+        "level": "Intermediate",
+        "keywords": [
+            "Mobile Development",
+            "Cross-Platform",
+            "Dart",
+            "Google"
+        ]
+    },
+    {
+        "name": "ShadCn",
+        "level": "Intermediate",
+        "keywords": [
+            "Web Development",
+            "Frontend",
+            "CSS Framework",
+            "Utility"
+        ]
+    },
+    {
+        "name": "JavaScript",
+        "level": "Intermediate",
+        "keywords": [
+            "Web Development",
+            "Frontend",
+            "Backend",
+            "Programming Language"
         ]
     },
     {
@@ -60,67 +146,47 @@
             "Web Development",
             "Frontend",
             "Backend",
-            "JavaScript Superset"
+            "Programming Language"
         ]
     },
     {
-        "name": "Node",
+        "name": "HTML",
         "level": "Intermediate",
         "keywords": [
             "Web Development",
-            "Backend",
-            "JavaScript",
-            "Server"
+            "Frontend",
+            "Markup Language",
+            "HyperText"
+        ]
+    },
+    {
+        "name": "CSS",
+        "level": "Intermediate",
+        "keywords": [
+            "Web Development",
+            "Frontend",
+            "Style Sheet",
+            "Design"
+        ]
+    },
+    {
+        "name": "PostgreSQL",
+        "level": "Intermediate",
+        "keywords": [
+            "Web Development",
+            "Database",
+            "SQL",
+            "Relational"
         ]
     },
     {
         "name": "MySQL",
         "level": "Intermediate",
         "keywords": [
-            "Databases",
+            "Web Development",
+            "Database",
             "SQL",
-            "Data Storage",
-            "Backend"
-        ]
-    },
-    {
-        "name": "Git",
-        "level": "Intermediate",
-        "keywords": [
-            "Version Control",
-            "Collaboration",
-            "Source Code"
-        ]
-    },
-    {
-        "name": "GitHub",
-        "level": "Intermediate",
-        "keywords": [
-            "Version Control",
-            "Collaboration",
-            "Source Code",
-            "Git"
-        ]
-    },
-    {
-        "name": "Next.js",
-        "level": "Beginner",
-        "keywords": [
-            "Web Development",
-            "Frontend",
-            "React Framework",
-            "SSR",
-            "Static Generation"
-        ]
-    },
-    {
-        "name": "React",
-        "level": "Intermediate",
-        "keywords": [
-            "Web Development",
-            "Frontend",
-            "JavaScript Library",
-            "UI"
+            "Relational"
         ]
     }
 ]
