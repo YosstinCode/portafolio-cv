@@ -181,7 +181,6 @@ const { className } = Astro.props as ExperienceProps;
 
                 <ul class="flex print:hidden flex-wrap gap-2" aria-label="Technologies used">
                   {skills && skills.map(skill => {
-                    console.log(skill)
                     const otherIconNames = {
                       "React Router DOM":"ReactRouterDom", 
                       "Next.js":"Next",
@@ -191,7 +190,6 @@ const { className } = Astro.props as ExperienceProps;
                       "Junit 5":"JUnit5",
                       "Material UI":"MUI"
                     }
-                    console.log(skill)
                     // const iconName = otherIconNames.includes(skill) ? skill : skill
                     // const iconName = skill === "Next.js" ? "Next" : skill
                     const iconName = Object.keys(otherIconNames).includes(skill) ? otherIconNames[skill as keyof typeof otherIconNames] : skill

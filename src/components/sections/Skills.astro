@@ -18,7 +18,7 @@ import Flutter from "@/icons/flutter.astro";
 import Figma from "@/icons/Figma.astro";
 import Gitlab from "@/icons/Gitlab.astro";
 import { useTranslations } from "@/i18n/utils";
-import type { LanguageList, SkillsUI } from "@/i18n/types";
+import type { LanguageList, SkillsUI, WorkUI } from "@/i18n/types";
 import ShadCn from "@/icons/Shadcn.astro";
 import Nest from "@/icons/Nest.astro";
 import PostgreSQL from "@/icons/PostgreSQL.astro";
@@ -27,16 +27,20 @@ import Prisma from "@/icons/Prisma.astro";
 import AtomicDesign from "@/icons/AtomicDesign.astro";
 import Scrum from "@/icons/Scrum.astro";
 import ReactRouterDom from "@/icons/ReactRouterDom.astro";
+import Java from "@/icons/Java.astro";
+import Spring from "@/icons/Spring.astro";
+import JUnit5 from "@/icons/JUnit5.astro";
+import Hibernate from "@/icons/Hibernate.astro";
+import MUI from "@/icons/MUI.astro";
+import Shadcn from "@/icons/Shadcn.astro";
 
 const SKILLS_ICONS: Record<string, any> = {
-	Figma,
-	Gitlab,
   HTML,
   CSS,
   JavaScript,
   TypeScript,
   React,
-  ReactRouterDom,
+  "React Router DOM":ReactRouterDom,
   Node,
   MySQL,
   Git,
@@ -47,33 +51,59 @@ const SKILLS_ICONS: Record<string, any> = {
   SwiftUI,
   Kotlin,
   Flutter,
-  ShadCn,
+  Shadcn,
   Nest,
   PostgreSQL,
   Leaflet,
+  "Heat.Leaflet":Leaflet,
   Prisma,
-  AtomicDesign,
-  Scrum
+  "Atomic Design":AtomicDesign,
+  Scrum,
+  Java,
+  "Spring Boot":Spring,
+  "Junit 5":JUnit5,
+  Hibernate,
+  "Material UI":MUI
 }
 
 const currentLocale = Astro.currentLocale || "es";
 
 const translateUI = useTranslations(currentLocale as LanguageList);
 
-const { title, skills } = translateUI('skills') as SkillsUI;
+const { title } = translateUI('skills') as SkillsUI;
+const { works } = translateUI('work') as WorkUI;
+
+const allSkills: string[] = []
+
+works.forEach(({ skills } : {skills:string[]}) => {
+  skills.forEach((skill) => {
+    if(!allSkills.find((skillName) => skillName === skill)) {
+      allSkills.push(skill)
+    }
+  });
+});
+
 ---
 
 <Section className={Astro.props.className} title={title}>
 	<ul class="[&>li>svg]:text-skin-hue inline-flex flex-wrap gap-6 [&>li>svg]:size-5 [&>li]:text-sm">
 		{
-			skills.map(({ name }) => {
+			allSkills.map((name) => {
+        // console.log("skills:",allSkills)
+        console.log("skill:",name)
 				const iconName = name === "Next.js" ? "Next" : name;
 				const Icon = SKILLS_ICONS[iconName];
 
 				return (
-					<li class="border-skin-hue/20s bg-skin-button-accent/20s borders border-solids flex items-center gap-1 rounded-md px-2 py-0.5 text-xs text-skin-muted print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
-						{Icon && <Icon />} <span>{name}</span>
-					</li>
+          <>
+          {
+            Icon && (
+              <li class="border-skin-hue/20s bg-skin-button-accent/20s borders border-solids flex items-center gap-1 rounded-md px-2 py-0.5 text-xs text-skin-muted print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
+                <Icon /> <span>{name}</span>
+              </li>
+            )
+          }
+          </>
 				);
 			})
 		}

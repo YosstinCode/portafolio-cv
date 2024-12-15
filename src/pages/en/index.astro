@@ -28,7 +28,7 @@ const hero = translateUI('hero') as Hero;
 		<div class="space-y-6 md:col-span-2 print:col-span-1 print:grid print:grid-cols-2 print:gap-5 print:space-y-0">
 			<HeroC basics={basics} hero={hero} className="print:col-span-3" />
 			<About summary={basics.summary} className="print:col-span-3" />
-			<div class="flex gap-4 md:flex-wrap flex-nowrap print:hidden">
+			<div class="flex gap-4 flex-nowrap md:flex-wrap lg:flex-nowrap  print:hidden">
 				<LanguageSwitch />
 				<ThemeSwitch />
 			</div>

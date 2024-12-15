@@ -3,8 +3,18 @@ import "hotkeypad/reset.css";
 import "hotkeypad/index.css";
 import { type SocialIcon } from "@/types";
 import { basics } from "@cv";
+import { useTranslations } from "@/i18n/utils";
+import type { LanguageList, KeyBoardManagerUI } from "@/i18n/types";
 
 const { profiles } = basics;
+
+const currentLocale = Astro.currentLocale || "es";
+
+const translateUI = useTranslations(currentLocale as LanguageList);
+
+const { socialSection, visit, press, callActionPress, placeholder, actionsSection, footerSection } = translateUI("keyBoardManager") as KeyBoardManagerUI;
+
+const { actions } = actionsSection
 
 const SOCIAL_ICONS: SocialIcon = {
 	GitHub: `<svg
@@ -43,24 +53,51 @@ const SOCIAL_ICONS: SocialIcon = {
 `,
 };
 
+const ACTIONS_ICONS  = {
+	print: `
+	<svg style="margin-right: 8px" width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  		<path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m10.5 0a48.536 48.536 0 0 0-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5Zm-3 0h.008v.008H15V10.5Z" />
+	</svg>
+	`,
+	language: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H6V2H10V4H8.86807C8.57073 5.66996 7.78574 7.17117 6.6656 8.35112C7.46567 8.73941 8.35737 8.96842 9.29948 8.99697L10.2735 6H12.7265L15.9765 16H13.8735L13.2235 14H9.77647L9.12647 16H7.0235L8.66176 10.9592C7.32639 10.8285 6.08165 10.3888 4.99999 9.71246C3.69496 10.5284 2.15255 11 0.5 11H0V9H0.5C1.5161 9 2.47775 8.76685 3.33437 8.35112C2.68381 7.66582 2.14629 6.87215 1.75171 6H4.02179C4.30023 6.43491 4.62904 6.83446 4.99999 7.19044C5.88743 6.33881 6.53369 5.23777 6.82607 4H0V2H4V0ZM12.5735 12L11.5 8.69688L10.4265 12H12.5735Z" fill="currentColor"/>
+</svg>`,
+	theme: `
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-moon"><path d="M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4"></path><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.9 4.9 1.4 1.4"></path><path d="m17.7 17.7 1.4 1.4"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.3 17.7-1.4 1.4"></path><path d="m19.1 4.9-1.4 1.4"></path></svg>
+	`,
+}
+
 const profilesInfo = profiles.map(({ network, url }) => {
 	const icon = SOCIAL_ICONS[network];
 	const firstLetter = network[0].toUpperCase();
 
 	return {
 		id: network,
-		section: "Social",
-		title: `Visit ${network}`,
+		section: socialSection.name,
+		title: `${visit} ${network}`,
 		url,
 		icon,
 		hotkey: `ctrl+${firstLetter}`,
+	};
+});
+
+const actionsInfo = actions.map(({name, icon}) => {
+	const firstLetter = name[0].toUpperCase();
+	const isLanguage = icon === "language" 
+
+	return {
+		id: icon,
+		section: actionsSection.name,
+		title: name,
+		icon: ACTIONS_ICONS[icon as keyof typeof ACTIONS_ICONS],
+		hotkey: `ctrl+${ isLanguage ? "E" : firstLetter}`,
 	};
 });
 ---
 
 <footer id="normal-footer" class="no-print flex flex-col gap-2 dark:text-gray-500">
 	<div>
-		Press <kbd class="dark:text-white">Cmd</kbd> + <kbd class="dark:text-white">K</kbd> to open the command palette.
+		{press} <kbd class="dark:text-white">Cmd</kbd> + <kbd class="dark:text-white">K</kbd> {callActionPress}.
 	</div>
 </footer>
 
@@ -71,7 +108,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
 	</svg>
 </div>
 
-<div id="hotkeypad" data-placeholder="Search Command" data-info={JSON.stringify(profilesInfo)}></div>
+<div id="hotkeypad" data-placeholder={placeholder} data-info={JSON.stringify(profilesInfo)} data-footer-info={JSON.stringify(footerSection)}  data-actions-info={JSON.stringify(actionsInfo)}></div>
 
 <script>
 	interface Info {
@@ -90,6 +127,40 @@ const profilesInfo = profiles.map(({ network, url }) => {
 	const info = hotkeypad.instance.getAttribute("data-info") ?? "[]";
 	const parsedInfo = JSON.parse(info) as Info[];
 
+	const actionsInfo = hotkeypad.instance.getAttribute("data-actions-info") ?? "[]";
+	const parsedActionsInfo = JSON.parse(actionsInfo) as Info[];
+
+
+	const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+	function updateTheme(value: any) {
+        const theme = value === "system" ? systemTheme : value;
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(theme);
+        localStorage.setItem("theme", value);
+    }
+
+	const actionsHandlers = {
+		print: () => {
+			window.print();
+		},
+		language: () => {
+			// obtener url actual
+			const url = window.location.href;
+			// obtener idioma actual
+			const currentLanguage = url.split("/")[3];
+			// obtener idioma nuevo
+			const newLanguage = currentLanguage === "es" ? "en" : "es";
+			// redireccionar a la nueva url
+			window.location.href = url.replace(currentLanguage, newLanguage);
+		},
+		theme: () => {
+			const storedTheme = localStorage.getItem("theme") || "system";
+			const newTheme = storedTheme === "dark" ? "light" : "dark";
+			updateTheme(newTheme);
+		},
+	}
+
 	const data = parsedInfo.map(({ url, hotkey, icon, id, section, title }) => {
 		return {
 			id,
@@ -102,19 +173,20 @@ const profilesInfo = profiles.map(({ network, url }) => {
 			},
 		};
 	});
+
+	const actions = parsedActionsInfo.map(({ hotkey, icon, id, section, title, handler }) => {
+		return {
+			id,
+			title,
+			icon,
+			hotkey,
+			section,
+			handler: actionsHandlers[id as keyof typeof actionsHandlers],
+		};
+	});
+
 	hotkeypad.setCommands([
-		{
-			id: "print",
-			title: "Print Resume",
-			icon: `<svg style="margin-right: 8px" width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m10.5 0a48.536 48.536 0 0 0-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5Zm-3 0h.008v.008H15V10.5Z" />
-</svg>`,
-			hotkey: "ctrl+P",
-			section: "Actions",
-			handler: () => {
-				window.print();
-			},
-		},
+		...actions,
 		...data,
 	]);
 
@@ -134,6 +206,21 @@ const profilesInfo = profiles.map(({ network, url }) => {
 			document.dispatchEvent(event);
 		});
 	});
+
+	window.addEventListener('hotkeypad:open', () => {
+		const footerInfo = hotkeypad.instance.getAttribute("data-footer-info") ?? "{}";
+		const parsedFooterInfo = JSON.parse(footerInfo)
+		
+		const { toSelect, toNavigate, toClose } = parsedFooterInfo;
+		const $keyBoardManagerFooter = hotkeypad.instance.querySelector("footer")
+
+		$keyBoardManagerFooter?.querySelectorAll("p").forEach((p) => {
+			if (p.textContent?.includes('to select'))  p.innerHTML = `<kbd>↩</kbd> ${toSelect}`;
+			if (p.textContent?.includes('to navigate'))  p.innerHTML = `<kbd>↑</kbd> <kbd>↓</kbd> ${toNavigate}`;
+			if (p.textContent?.includes('to close'))  p.innerHTML = `<kbd>Ctrl + K</kbd> <kbd>Esc</kbd> ${toClose}`;
+		});
+	})
+
 </script>
 
 <style>
