@@ -1,71 +1,83 @@
 [
     {
+        "name": "Proyecto Freelance",
+        "position": "Desarrollador Full Stack – .NET + Angular",
+        "url": "",
+        "location_type": "Remoto",
+        "location": "Colombia",
+        "startDate": "2025-08-01",
+        "endDate": "2026-04-01",
+        "summary": "Desarrollo de módulos funcionales en un sistema de gestión interna para administración de contratos, usuarios, solicitudes y procesos organizacionales.",
+        "achievements": [],
+        "responsibilities": [
+            "Implementé APIs REST en ASP.NET Core integradas con SQL Server mediante Entity Framework, estructurando lógica de negocio y acceso a datos.",
+            "Construí componentes en Angular con tablas dinámicas, filtros avanzados y formularios para la gestión eficiente de información.",
+            "Desarrollé flujos de aprobación basados en estados (pendiente / aprobado / rechazado) con control de acceso por roles y permisos.",
+            "Digitalicé procesos previamente gestionados en Excel, mejorando la trazabilidad y organización de la información institucional.",
+            "Implementé manejo de archivos y relaciones entre entidades (usuarios, compañías), fortaleciendo la integridad y consistencia de los datos.",
+            "Colaboré directamente con un ingeniero senior en implementación de funcionalidades y mejoras del sistema en un entorno real de producción."
+        ],
+        "skills": [
+            ".NET",
+            "Angular",
+            "ASP.NET Core",
+            "SQL Server",
+            "Entity Framework"
+        ]
+    },
+    {
+        "name": "Proyecto TERB – Universidad Piloto de Colombia",
+        "position": "Auxiliar de Pruebas Funcionales (QA)",
+        "url": "",
+        "location_type": "Presencial",
+        "location": "Girardot, Colombia",
+        "startDate": "2025-02-01",
+        "endDate": "2025-07-01",
+        "summary": "Ejecución de pruebas funcionales sobre operaciones CRUD en aplicativos web y móviles.",
+        "achievements": [],
+        "responsibilities": [
+            "Validé funcionalidades de monitoreo en escenarios síncronos, asíncronos y offline.",
+            "Configuré microrutas y geocercas mediante archivos KML utilizando Google My Map.",
+            "Registré resultados de pruebas y documenté incidencias en logs de defectos para seguimiento técnico.",
+            "Participé en validaciones de comportamiento y estabilidad del sistema durante ciclos de pruebas.",
+            "Colaboré en la identificación y reporte de errores funcionales para mejora continua del aplicativo."
+        ],
+        "skills": [
+            "QA",
+            "Google My Map",
+            "KML"
+        ]
+    },
+    {
         "name": "Observatorio Secretaría de Tránsito de Girardot",
-        "position": "Lider tecnico, Desarrollador Frontend",
-        "url": "#",
+        "position": "Desarrollador Frontend",
+        "url": "",
         "location_type": "Presencial",
         "location": "Girardot, Colombia",
         "startDate": "2023-10-01",
         "endDate": "2024-12-01",
-        "summary": "Participé activamente en el desarrollo frontend del Observatorio de Siniestralidad vial y en las decisiones estratégicas para distintos productos dentro del semillero, que forman parte del convenio con la Secretaría de Tránsito de Girardot. Mi rol incluyó la coordinación del desarrollo frontend, asegurando que las soluciones implementadas fueran efectivas y alineadas con los objetivos del observatorio.",
-        "achievements": [
-            "Implementé un software que generó más de 10,000 dólares para la Universidad Piloto Seccional Alto del Magadalena para la Secretaría de Tránsito de Girardot, demostrando la importancia del producto.",
-            "Optimicé los procesos de toma de decisiones mediante la implementación de algoritmos avanzados, lo que permitió una mayor rapidez y precisión en la gestión de datos y la resolución de problemas.",
-            "Inové en la recolección de datos al integrar activamente a la ciudadanía en el proceso, aprovechando su participación para mejorar la calidad y cantidad de información recolectada, lo que resultó en un aumento del 30% en la cobertura de datos en comparación con métodos tradicionales."
-        ],
+        "summary": "Liderazgo en la revisión de código y definición del flujo de trabajo con Git en un equipo de desarrollo.",
+        "achievements": [],
         "responsibilities": [
-            "Lideré el equipo en la revisión y aprobación del código, garantizando la calidad y coherencia en el desarrollo frontend. Además, definí el flujo de trabajo con Git para asegurar un desarrollo eficiente y colaborativo.",
-            "Fui el punto de enlace entre los equipos de desarrollo y los usuarios finales, ayudando a definir los requisitos y prioridades del sistema. Apoyé al equipo en la interpretación técnica y a los usuarios en la clarificación de sus necesidades y deseos en el software.",
-            "Colaboré estrechamente en el diseño de la estructura de la base de datos para asegurar un acceso rápido y eficiente a los datos críticos de accidentalidad, basándome en el análisis del sistema y los requerimientos tomados.",
-            "Desarrollé componentes gráficos y mapas de calor con OpenStreetMap y Leaflet.",
-            "me encargué de establecer las mejores prácticas para la configuración y organización del sistema, incluyendo la estructura de carpetas, arquitecturas y configuraciones de entorno, asegurando una implementación escalable y flexible."
+            "Actuó como enlace técnico entre usuarios finales y el equipo de desarrollo, traduciendo requerimientos en soluciones funcionales.",
+            "Diseñó la arquitectura de base de datos orientada al análisis de accidentalidad vial con estructura optimizada para consultas analíticas.",
+            "Desarrolló mapas de calor georreferenciados con OpenStreetMap y Leaflet para visualización de zonas de alto riesgo vial.",
+            "Definió buenas prácticas de desarrollo y estándares de código para el equipo."
         ],
         "skills": [
             "React",
-            "Tailwind",
-            "Atomic Design",
-            "Shadcn",
             "React Router DOM",
+            "Shadcn",
+            "Tailwind",
             "Leaflet",
             "Heat.Leaflet",
-            "Nest",
+            "NestJs",
             "Prisma",
             "PostgreSQL",
-            "Scrum"
-        ]
-    },
-    {
-        "name": "Ensolvers",
-        "position": "Ingeniero de Software",
-        "url": "https://ensolvers.com/",
-        "location_type": "Remote",
-        "location": "San Francisco, EE.UU.",
-        "startDate": "2023-12-01",
-        "endDate": "2024-06-01",
-        "summary": "Trabajé en el desarrollo y mantenimiento del sistema Hirelens, utilizando React JS en el frontend y Java Spring Boot en el backend. Realicé pruebas con JUnit y Mockito para asegurar la calidad del sistema y apoyé a mis compañeros en la implementación de soluciones y en la capacitación de nuevos miembros del equipo.",
-        "achievements": [
-            "Optimicé la gestión de datos, reducción el tiempo de respuesta en la administración de datos, mejorando un 20% la rapidez y precisión en la toma de decisiones críticas para el equipo de contratación.",
-            "La visualización de datos mediante gráficos interactivos no solo facilitó la toma de decisiones, sino que también mejoró la efectividad de la gestión de datos en un 25%, al permitir a los usuarios identificar patrones y tendencias con mayor rapidez y claridad."
-        ],
-        "responsibilities": [
-            "Implementé filtros de búsqueda en el frontend y endpoints en el backend para optimizar la gestión de candidatos, citas y tareas, permitiendo un acceso rápido y eficiente a la información clave y reduciendo el tiempo de respuesta.",
-            "Desarrollé pruebas unitarias para asegurar la estabilidad y funcionalidad del sistema, garantizando un rendimiento óptimo y minimizando errores. Esto también contempló la integración continua y el despliegue automático (CI/CD) con integración en Slack, permitiendo una respuesta rápida ante alertas y fallos en las fases de desarrollo.",
-            "Facilitar la integración de nuevos miembros, ofrecí capacitaciones personalizadas y configuraciones de entorno adaptadas, lo que aceleró su adaptación y comprensión del sistema, optimizando su productividad desde el primer día.",
-            "Desarrollé y optimicé componentes gráficos avanzados para el análisis de datos, proporcionando una interpretación visual clara y precisa de la información, lo que facilitó la toma de decisiones estratégicas."
-        ],
-        "skills": [
-            "React",
-            "React Hook Form",
-            "Material UI",
-            "Nivo",
-            "Java",
-            "Spring Boot",
-            "Lombok",
-            "Junit 5",
-            "Hibernate",
-            "Mockito",
-            "MySQL",
-            "Scrum"
+            "Atomic Design",
+            "Scrum",
+            "OpenStreetMap",
+            "Git"
         ]
     }
 ]

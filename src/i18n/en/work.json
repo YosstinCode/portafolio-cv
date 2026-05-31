@@ -1,24 +1,68 @@
 [
     {
+        "name": "Freelance Project",
+        "position": "Full Stack Developer – .NET + Angular",
+        "url": "",
+        "location_type": "Remote",
+        "location": "Colombia",
+        "startDate": "2025-08-01",
+        "endDate": "2026-04-01",
+        "summary": "Development of functional modules in an internal management system for the administration of contracts, users, requests, and organizational processes.",
+        "achievements": [],
+        "responsibilities": [
+            "Implemented REST APIs in ASP.NET Core integrated with SQL Server using Entity Framework, structuring business logic and data access.",
+            "Built components in Angular with dynamic tables, advanced filters, and forms for efficient information management.",
+            "Developed state-based approval workflows (pending / approved / rejected) with role and permission-based access control.",
+            "Digitized processes previously managed in Excel, improving the traceability and organization of institutional information.",
+            "Implemented file management and relationships between entities (users, companies), strengthening data integrity and consistency.",
+            "Collaborated directly with a senior engineer in implementing system features and improvements in a real production environment."
+        ],
+        "skills": [
+            ".NET",
+            "Angular",
+            "ASP.NET Core",
+            "SQL Server",
+            "Entity Framework"
+        ]
+    },
+    {
+        "name": "TERB Project – Universidad Piloto de Colombia",
+        "position": "Functional Testing Assistant (QA)",
+        "url": "",
+        "location_type": "On site",
+        "location": "Girardot, Colombia",
+        "startDate": "2025-02-01",
+        "endDate": "2025-07-01",
+        "summary": "Execution of functional tests on CRUD operations in web and mobile applications.",
+        "achievements": [],
+        "responsibilities": [
+            "Validated monitoring functionalities in synchronous, asynchronous, and offline scenarios.",
+            "Configured micro-routes and geofences using KML files in Google My Maps.",
+            "Recorded test results and documented incidents in defect logs for technical tracking.",
+            "Participated in the validation of system behavior and stability during testing cycles.",
+            "Collaborated in identifying and reporting functional errors for the continuous improvement of the application."
+        ],
+        "skills": [
+            "QA",
+            "Google My Map",
+            "KML"
+        ]
+    },
+    {
         "name": "Observatory Girardot Traffic Secretariat",
-        "position": "Technical Leader, Frontend Developer",
-        "url": "#",
+        "position": "Frontend Developer",
+        "url": "",
         "location_type": "On site",
         "location": "Girardot, Colombia",
         "startDate": "2023-10-01",
         "endDate": "2024-12-01",
-        "summary": "I actively participated in the frontend development of the Traffic Accident Observatory and in strategic decisions for various products within the research group, which are part of the agreement with the Girardot Traffic Secretariat. My role included leading frontend development, ensuring that implemented solutions were effective and aligned with the observatory's objectives.",
-        "achievements": [
-            "I implemented software that generated over $10,000 for the University Piloto Seccional Alto del Magdalena for the Girardot Traffic Secretariat, demonstrating the importance of the product.",
-            "I optimized decision-making processes by implementing advanced algorithms, which allowed for faster and more accurate data management and problem-solving.",
-            "I innovated in data collection by actively integrating citizens into the process, utilizing their participation to improve the quality and quantity of collected information, resulting in a 30% increase in data coverage compared to traditional methods."
-        ],
+        "summary": "Led code reviews and defined the Git workflow within a development team.",
+        "achievements": [],
         "responsibilities": [
-            "I led the team in code review and approval, ensuring quality and consistency in frontend development. I also defined the workflow with Git to ensure efficient and collaborative development.",
-            "I acted as a liaison between the development teams and the end users, helping to define system requirements and priorities. I supported the team in interpreting technical details and assisted users in clarifying their needs and desires in the software.",
-            "I collaborated closely in designing the database structure to ensure quick and efficient access to critical accident data, based on system analysis and requirements gathered.",
-            "I developed graphical components and heat maps with OpenStreetMap and Leaflet.",
-            "I was responsible for establishing best practices for system configuration and organization, including folder structure, architecture, and environment configurations, ensuring scalable and flexible implementation."
+            "Acted as a technical liaison between end users and the development team, translating requirements into functional solutions.",
+            "Designed a database architecture oriented towards traffic accident analysis with an optimized structure for analytical queries.",
+            "Developed georeferenced heat maps with OpenStreetMap and Leaflet for visualizing high-risk traffic zones.",
+            "Defined development best practices and coding standards for the team."
         ],
         "skills": [
             "React",
@@ -31,41 +75,9 @@
             "Prisma",
             "PostgreSQL",
             "Atomic Design",
-            "Scrum"
-        ]
-    },
-    {
-        "name": "Ensolvers",
-        "position": "Software Engineer",
-        "url": "https://ensolvers.com/",
-        "location_type": "Remote",
-        "location": "San Francisco, USA",
-        "startDate": "2023-12-01",
-        "endDate": "2024-06-01",
-        "summary": "I worked on the development and maintenance of the Hirelens system, using React JS for the frontend and Java Spring Boot for the backend. I conducted tests with JUnit and Mockito to ensure system quality and supported my colleagues in implementing solutions and training new team members.",
-        "achievements": [
-            "I optimized data management, reducing response time in data administration by 20%, improving the speed and accuracy of critical decision-making for the recruitment team.",
-            "The visualization of data through interactive graphics not only facilitated decision-making but also improved data management effectiveness by 25%, allowing users to identify patterns and trends more quickly and clearly."
-        ],
-        "responsibilities": [
-            "I implemented search filters in the frontend and endpoints in the backend to optimize candidate management, appointments, and tasks, enabling quick and efficient access to key information and reducing response time.",
-            "I developed unit tests to ensure system stability and functionality, guaranteeing optimal performance and minimizing errors. This also included continuous integration and automatic deployment (CI/CD) with integration into Slack, allowing a quick response to alerts and failures in development phases.",
-            "To facilitate the integration of new members, I provided customized training and environment configurations, which accelerated their adaptation and understanding of the system, optimizing their productivity from day one.",
-            "I developed and optimized advanced graphical components for data analysis, providing a clear and precise visual interpretation of information, which facilitated strategic decision-making."
-        ],
-        "skills": [
-            "Java 17",
-            "Spring Boot",
-            "Lombok",
-            "Junit 5",
-            "MySQL",
-            "Hibernate",
-            "Mockito",
-            "React",
-            "Material UI",
-            "React Hook Form",
-            "Nivo",
-            "Scrum"
+            "Scrum",
+            "OpenStreetMap",
+            "Git"
         ]
     }
 ]
