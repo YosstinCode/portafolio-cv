@@ -1,14 +1,16 @@
 [
     {
-        "name": "Road Traffic Accident Observatory",
+        "name": "Road Accident Analytics Platform",
         "isActive": true,
-        "description": "A web platform designed to manage, digitize, and analyze road traffic accident data. The system centralizes accident records, enables advanced data exploration, and provides reporting and visualization tools to support decision-making processes.",
+        "description": "A full-stack web application developed for the digitization, management, and analysis of road traffic accident data. The platform centralizes records, streamlines data access, generates reports, and provides visualization tools to support decision-making processes.",
         "highlights": [
+            "Frontend built with React and TypeScript for a modern and scalable user interface",
+            "Backend developed with NestJS and TypeScript using a modular architecture and REST APIs",
+            "MySQL database design and management for structured data storage",
             "Administrative dashboard for record and report management",
             "Interactive charts and statistical data visualization",
-            "Export functionality for Excel and PDF reports",
-            "Advanced search and filtering capabilities",
-            "Dynamic forms with data validation"
+            "Excel and PDF export functionality",
+            "Advanced search and filtering capabilities"
         ],
         "url": "https://observatorio.jhonsonstudio.dev/",
         "github": "https://github.com/YosstinCode"
@@ -16,15 +18,16 @@
     {
         "name": "Minimum Cost Calculator",
         "isActive": true,
-        "description": "A web application built to calculate and analyze minimum costs through an intuitive and responsive interface. It provides real-time results, helping users make informed decisions efficiently.",
+        "description": "A full-stack web application designed to calculate and optimize minimum costs through an intuitive interface and real-time processing. The project combines a React frontend with a FastAPI backend built in Python.",
         "highlights": [
-            "Automated minimum cost calculations",
-            "Real-time result updates",
+            "Frontend developed with React and TypeScript",
+            "Backend implemented with FastAPI and Python for high-performance API development",
+            "Real-time calculation and result processing",
             "Input validation and error handling",
             "Responsive design for desktop and mobile devices",
             "User-friendly and intuitive interface"
         ],
         "url": "https://calculadora-costo-minimo.vercel.app/",
-        "github": "https://github.com/LunaCastrillon"
+        "github": "https://github.com/YosstinCode"
     }
 ]

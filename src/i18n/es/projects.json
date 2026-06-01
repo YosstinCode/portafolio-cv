@@ -2,13 +2,15 @@
     {
         "name": "Observatorio de Siniestralidad Vial",
         "isActive": true,
-        "description": "Plataforma web desarrollada para la gestión, digitalización y análisis de información relacionada con siniestros viales. Centraliza registros, facilita la consulta de datos y permite generar reportes y estadísticas para apoyar la toma de decisiones.",
+        "description": "Aplicación web full-stack desarrollada para la digitalización, gestión y análisis de información relacionada con siniestros viales. La plataforma centraliza registros, facilita la consulta de datos, genera reportes y proporciona herramientas de visualización para apoyar la toma de decisiones.",
         "highlights": [
+            "Frontend desarrollado con React y TypeScript para una interfaz moderna y escalable",
+            "Backend construido con NestJS y TypeScript utilizando arquitectura modular y APIs REST",
+            "Diseño y gestión de base de datos MySQL para almacenar información estructurada",
             "Panel administrativo para gestión de registros y reportes",
             "Visualización de estadísticas mediante gráficos interactivos",
             "Exportación de información a Excel y PDF",
-            "Búsqueda y filtrado avanzado de datos",
-            "Formularios dinámicos con validación de datos"
+            "Búsqueda y filtrado avanzado de datos"
         ],
         "url": "https://observatorio.jhonsonstudio.dev/",
         "github": "https://github.com/YosstinCode"
@@ -16,15 +18,16 @@
     {
         "name": "Calculadora de Costo Mínimo",
         "isActive": true,
-        "description": "Aplicación web diseñada para calcular y analizar costos mínimos mediante una interfaz intuitiva y responsiva. Permite obtener resultados en tiempo real para facilitar procesos de análisis y toma de decisiones.",
+        "description": "Aplicación web full-stack diseñada para calcular y optimizar costos mínimos mediante una interfaz intuitiva y procesamiento en tiempo real. El proyecto combina React para el frontend y FastAPI con Python para el backend.",
         "highlights": [
-            "Cálculo automático de costos mínimos",
-            "Resultados actualizados en tiempo real",
-            "Validación de datos de entrada",
+            "Frontend desarrollado con React y TypeScript",
+            "Backend implementado con FastAPI y Python para el desarrollo de APIs de alto rendimiento",
+            "Procesamiento y cálculo de resultados en tiempo real",
+            "Validación de datos y manejo de errores",
             "Diseño responsive para dispositivos móviles y escritorio",
-            "Interfaz enfocada en simplicidad y facilidad de uso"
+            "Interfaz intuitiva enfocada en la experiencia de usuario"
         ],
         "url": "https://calculadora-costo-minimo.vercel.app/",
-        "github": "https://github.com/LunaCastrillon"
+        "github": "https://github.com/YosstinCode"
     }
 ]
