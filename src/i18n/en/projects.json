@@ -1,44 +1,30 @@
 [
     {
-        "name": "Personal Portfolio",
-        "isActive": false,
-        "description": "A personal portfolio website to showcase my projects and skills.",
-        "highlights": [
-            "Built with React and Tailwind CSS",
-            "Includes a blog and contact form"
-        ],
-        "url": "https://johndoe.dev",
-        "github": "https://github.com"
-    },
-    {
-        "name": "Weather App",
+        "name": "Road Traffic Accident Observatory",
         "isActive": true,
-        "description": "A web application that provides weather information for any location.",
+        "description": "A web platform designed to manage, digitize, and analyze road traffic accident data. The system centralizes accident records, enables advanced data exploration, and provides reporting and visualization tools to support decision-making processes.",
         "highlights": [
-            "Built with JavaScript and OpenWeatherMap API",
-            "Responsive design"
+            "Administrative dashboard for record and report management",
+            "Interactive charts and statistical data visualization",
+            "Export functionality for Excel and PDF reports",
+            "Advanced search and filtering capabilities",
+            "Dynamic forms with data validation"
         ],
-        "url": "https://weatherapp.com"
+        "url": "https://observatorio.jhonsonstudio.dev/",
+        "github": "https://github.com/YosstinCode"
     },
     {
-        "name": "Task Manager",
+        "name": "Minimum Cost Calculator",
         "isActive": true,
-        "description": "A simple task management app to keep track of daily tasks.",
+        "description": "A web application built to calculate and analyze minimum costs through an intuitive and responsive interface. It provides real-time results, helping users make informed decisions efficiently.",
         "highlights": [
-            "Built with Node.js and MongoDB",
-            "User authentication and CRUD operations"
+            "Automated minimum cost calculations",
+            "Real-time result updates",
+            "Input validation and error handling",
+            "Responsive design for desktop and mobile devices",
+            "User-friendly and intuitive interface"
         ],
-        "url": "https://taskmanager.com",
-        "github": "https://github.com"
-    },
-    {
-        "name": "E-commerce Site",
-        "isActive": false,
-        "description": "An online store built with Next.js and Stripe for payment processing.",
-        "highlights": [
-            "Product management and shopping cart functionality",
-            "Secure payment integration"
-        ],
-        "url": "https://ecommerce.com"
+        "url": "https://calculadora-costo-minimo.vercel.app/",
+        "github": "https://github.com/LunaCastrillon"
     }
 ]
